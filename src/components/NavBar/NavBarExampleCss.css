@@ -1,0 +1,103 @@
+/* Basic navbar styles */
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:12px 18px;
+  background:var(--nav-bg, #fff);
+}
+
+#nav_primary{ font-weight:700; text-decoration:none; color:inherit }
+
+.nav-links{ display:flex; gap:14px; align-items:center }
+.nav-links .lTd{ text-decoration:none }
+
+/* hamburger - hidden on larger screens */
+.nav-toggle{ display:none; background:none; border:0; padding:8px; cursor:pointer }
+.nav-toggle .hamburger{ width:22px; height:2px; background:currentColor; display:block; position:relative }
+.nav-toggle .hamburger::before, .nav-toggle .hamburger::after{ content:''; position:absolute; left:0; right:0; height:2px; background:currentColor }
+.nav-toggle .hamburger::before{ top:-7px }
+.nav-toggle .hamburger::after{ top:7px }
+
+/* Small screens: show hamburger, stack links vertically */
+@media (max-width: 767px){
+  .nav-toggle{ display:inline-flex }
+
+  .nav-links{
+    position: absolute;
+    top: 64px; /* adjust based on header height */
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    background: var(--nav-mobile-bg, #fff);
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding: 12px 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  }
+
+  .nav-links.open{ display:flex }
+
+  .nav-links .lTd{ padding:10px 8px; width:100%; display:block }
+}
+
+/* Desktop adjustments */
+@media (min-width: 768px){
+  .nav-links{ position: static; display:flex }
+}
+nav {
+    background-color: var(--bg);
+    /* background-color: #a0a0a0; */
+    color: var(--pr-color);
+    box-sizing: border-box;
+    position: sticky;
+    overflow: hidden;
+    height: 56px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0px;
+    top:0;
+}
+#nav_primary{
+    padding: 10px 15px;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid rgb(0,0,0,0.1);
+    border-radius: 15px;
+}
+#nav_primary:hover{
+    cursor:pointer;
+    background-color: var(--yell);
+}
+
+#nav_secondary {
+position:relative;
+top: 8px; 
+left:-4px; 
+font-size:12px;
+color: var(--purp);
+}
+
+.lTd {
+    text-decoration: none;
+    color: inherit;
+    padding: 10px 15px;
+    border-radius: 15px;
+}
+.lTd:hover {
+    background-color: var(--s-bg);
+}
+#nav_consult  {
+    margin: 0px 15px;
+    background-color: var(--yell);
+    padding: 10px 15px;
+    border-radius: 15px;
+}
+#nav_consult:hover {
+    background-color: var(--blac);
+    color: var(--whit);
+}

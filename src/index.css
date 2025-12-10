@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+
+:root {
+  /* line-height: 1.5; */
+  /* font-weight: 400; */
+  --bg: rgb(255,255,255); 
+  --s-bg: rgb(245,245,245);
+  --pr-color: rgb(0,0,0);
+  --purp: rgb(61, 59, 255);
+  --yell: rgb(211, 255, 36);
+  --blac: rgb(0, 0, 0);
+  --whit: rgb(255,255,255);
+
+  font-family: "Google Sans Flex", system-ui, sans-serif;
+  color: var(--pr-color);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+}
+
