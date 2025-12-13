@@ -118,29 +118,18 @@ color: var(--purp);
     #nav_home{display:none;}
     .nav-links{
         position: static;
-        display: flex; /* horizontal on desktop */
-        flex-direction: row;
-        gap: 0px;
-        align-items: center;
-        justify-content: end;
-        background: transparent;
-        padding: 0;
-        box-shadow: none;
+        width: auto;
+        display: inline; /* horizontal on desktop */
+        margin: 0px 0px;
         opacity:1;
         transition: none;
         pointer-events:auto;
     }
     .nav-links.open{
         position: static;
-        display: flex; /* horizontal on desktop */
-        flex-direction: row;
-        gap: 0px;
-        align-items: center;
         width: auto;
-
-        background: transparent;
-        padding: 0;
-        box-shadow: none;
+        display: inline; /* horizontal on desktop */
+        margin: 0px 0px;
         opacity:1;
         transition: none;
         pointer-events:auto;
