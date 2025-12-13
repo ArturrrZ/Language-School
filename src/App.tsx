@@ -6,18 +6,21 @@ import KidsPage from './pages/KidsPage';
 import ConsultationPage from './pages/ConsultationPage';
 import LoginPage from './pages/LoginPage';
 import NavBar from './components/NavBar/NavBar';
+import { Box } from '@mui/material';
 
 function App() {
 
   return (
     <BrowserRouter>
     <NavBar />
-      <Routes>
+      <Box id='main'>
+      <Routes >
         <Route  path='/' element={<HomePage />}/>
         <Route  path='/kids' element={<KidsPage />}/>
         <Route  path='/consultation' element={<ConsultationPage />}/>
         <Route  path='/login' element={<LoginPage />}/>
       </Routes>
+      </Box>
     </BrowserRouter>
   )
 }

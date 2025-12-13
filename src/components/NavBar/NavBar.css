@@ -3,10 +3,11 @@ nav {
     /* background-color: #a0a0a0; */
     color: var(--pr-color);
     box-sizing: border-box;
-    position: sticky;
+    position: fixed;
     overflow: hidden;
     height: 56px;
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -81,8 +82,10 @@ color: var(--purp);
 .lTd:hover {
     background-color: var(--s-bg);
 }
-
 @media screen and (min-width: 768px){
+    nav{
+        max-width: 1150px;
+    }
     #nav_primary:hover{
     background-color: var(--yell);
     }
@@ -127,7 +130,5 @@ color: var(--purp);
     background-color: var(--blac);
     color: var(--whit);
     }
-    button {
-        display: none;
-    }
+
 }
