@@ -22,6 +22,8 @@ nav {
     color: inherit;
     border: 1px solid rgb(0,0,0,0.1);
     border-radius: 15px;
+    width:170px;
+    box-sizing: border-box;
 }
 #nav_primary:hover{
     cursor:pointer;
@@ -36,8 +38,8 @@ font-size:12px;
 color: var(--purp);
 }
 
-.nav-links{
-    display: none; /* hidden by default on small screens; opened via .open */
+/* .nav-links{
+    display: none;
     gap: 0px;
 }
 
@@ -50,7 +52,30 @@ color: var(--purp);
     right:5%;
     width:90%;
     background-color: rgb(255, 255, 255);
+} */
+
+.nav-links {
+    position: fixed;
+    top: 56px;
+    width: 90%;
+    margin: 0 auto;
+    /* background: white; */
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+
+    z-index: 20;
 }
+
+.nav-links.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .nav-links.open > a {
     border: 1px solid rgb(0,0,0,0.1);
 }
@@ -78,6 +103,7 @@ color: var(--purp);
     color: inherit;
     padding: 10px 15px;
     border-radius: 15px;
+    cursor:pointer;
 }
 .lTd:hover {
     background-color: var(--s-bg);
@@ -87,7 +113,7 @@ color: var(--purp);
         max-width: 1150px;
     }
     #nav_primary:hover{
-    background-color: var(--yell);
+    /* background-color: var(--yell); */
     }
     #nav_home{display:none;}
     .nav-links{
@@ -96,12 +122,13 @@ color: var(--purp);
         flex-direction: row;
         gap: 0px;
         align-items: center;
-        width: auto;
-        top: auto;
-        right: auto;
+        justify-content: end;
         background: transparent;
         padding: 0;
         box-shadow: none;
+        opacity:1;
+        transition: none;
+        pointer-events:auto;
     }
     .nav-links.open{
         position: static;
@@ -110,16 +137,18 @@ color: var(--purp);
         gap: 0px;
         align-items: center;
         width: auto;
-        top: auto;
-        right: auto;
+
         background: transparent;
         padding: 0;
         box-shadow: none;
+        opacity:1;
+        transition: none;
+        pointer-events:auto;
     }
     .nav-links.open > a {
     border: none;
 }
-    .nav-toggle{ display: none }
+    .nav-toggle{ display: none !important;  }
     #nav_consult  {
     margin: 0px 8px;
     background-color: var(--yell);
