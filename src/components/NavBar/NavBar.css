@@ -5,14 +5,16 @@ nav {
     box-sizing: border-box;
     position: fixed;
     overflow: hidden;
-    height: 56px;
-    width: 90%;
+    height: 50px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 5px 0px;
+    /* align-items: center;
+    /*  */
     top:0;
+    z-index: 20;
+    padding: 0 5%;
 }
 
 
@@ -20,7 +22,7 @@ nav {
     padding: 10px 15px;
     text-decoration: none;
     color: inherit;
-    border: 1px solid rgb(0,0,0,0.1);
+    /* border: 1px solid rgb(0,0,0,0.1); */
     border-radius: 15px;
     width:170px;
     box-sizing: border-box;
@@ -56,13 +58,15 @@ color: var(--purp);
 
 .nav-links {
     position: fixed;
-    top: 56px;
+    top: 50px;
     width: 90%;
     margin: 0 auto;
-    /* background: white; */
-
+    background: white;
+    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 0px 0px 15px 15px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -92,7 +96,7 @@ color: var(--purp);
     cursor: pointer;
     border-radius: 15px;
     text-align: center;
-    border: 1px solid rgb(0,0,0,0.1);
+    /* border: 1px solid rgb(0,0,0,0.1); */
 }
 .nav-toggle:hover{
     background-color: var(--s-bg);
@@ -102,8 +106,10 @@ color: var(--purp);
     text-decoration: none;
     color: inherit;
     padding: 10px 15px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     cursor:pointer;
+    background-color: rgb(255, 255, 255);
+
 }
 .lTd:hover {
     background-color: var(--s-bg);
@@ -119,16 +125,19 @@ color: var(--purp);
     .nav-links{
         position: static;
         width: auto;
-        display: inline; /* horizontal on desktop */
+        display: flex; /* horizontal on desktop */
+        flex-direction: row;
         margin: 0px 0px;
         opacity:1;
         transition: none;
         pointer-events:auto;
+        box-shadow: none;
+        border-radius: 0px;
     }
     .nav-links.open{
         position: static;
         width: auto;
-        display: inline; /* horizontal on desktop */
+        display: flex; /* horizontal on desktop */
         margin: 0px 0px;
         opacity:1;
         transition: none;
@@ -136,7 +145,8 @@ color: var(--purp);
     }
     .nav-links.open > a {
     border: none;
-}
+    }
+    .lTd{border-radius: 15px;}
     .nav-toggle{ display: none !important;  }
     #nav_consult  {
     margin: 0px 8px;
