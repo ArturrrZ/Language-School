@@ -60,7 +60,8 @@ color: var(--purp);
 .nav-links {
     position: fixed;
     top: 50px;
-    width: 90%;
+    right:0px;
+    width: 100%;
     margin: 0 auto;
     background: white;
     box-shadow: 0 12px 12px rgba(0, 0, 0, 0.3);

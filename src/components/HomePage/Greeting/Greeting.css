@@ -21,9 +21,16 @@
 }
 
 @media screen and (min-width: 768px){
+    #home_greeting{
+        border-radius: 35px;
+
+    }
   #home_main{
         max-width: 1150px;
         padding-top: 25px;
         margin: 0 auto;
     }
+    #home_top{
+    max-width:400px;
+}
 }
