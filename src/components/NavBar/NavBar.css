@@ -1,20 +1,21 @@
 nav {
-    background-color: var(--bg);
-    /* background-color: #a0a0a0; */
-    color: var(--pr-color);
-    box-sizing: border-box;
     position: fixed;
-    overflow: hidden;
-    height: 50px;
+    top: 0;
     width: 100%;
-    margin: 0 auto;
+    background-color: var(--bg);
+    color: var(--pr-color);
+    z-index: 20;
+}
+
+.nav-inner {
+    height: 50px;
     display: flex;
     justify-content: space-between;
-    /* align-items: center;
-    /*  */
-    top:0;
-    z-index: 20;
+    align-items: center;
     padding: 0 5%;
+    box-sizing: border-box;
+    max-width: 1150px;
+    margin: 0 auto;
 }
 
 
@@ -67,7 +68,7 @@ color: var(--purp);
     display: flex;
     flex-direction: column;
     overflow: hidden;
-
+    text-align:center;
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -116,7 +117,10 @@ color: var(--purp);
 }
 @media screen and (min-width: 768px){
     nav{
-        max-width: 1150px;
+        /* max-width and width removed for full background */
+    }
+    .nav-inner {
+        padding: 0;
     }
     #nav_primary:hover{
     /* background-color: var(--yell); */
