@@ -8,3 +8,11 @@
 }
 }
 #main{margin-top:50px;}
+.custom-button{
+  border: 1px solid black;
+}
+.custom-button:hover{
+  background-color: var(--blac);
+  color: var(--whit);
+  border: none;
+}
