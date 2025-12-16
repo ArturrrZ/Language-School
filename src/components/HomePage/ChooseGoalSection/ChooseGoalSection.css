@@ -1,0 +1,60 @@
+#choose-goal-section{
+    background-color: var(--yell);
+    width:100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+.choose-goal-section-header{
+    font-weight: 600;
+}
+.choose-goal-list{
+    margin-top: 40px;
+    display: flex;
+    gap:5px;
+    flex-wrap: wrap;
+    max-width: 350px;
+}
+.choose-goal-box{
+    background-color: var(--whit);
+    color: var(--blac);
+    padding: 8px 15px;
+    border-radius: 15px;
+}
+.choose-goal-box:hover{
+    color:var(--whit);
+    background-color: var(--blac);
+    cursor: pointer;
+}
+#Personal{
+    color:var(--whit);
+    background-color: var(--purp);
+}
+#Personal:hover{
+    color:var(--whit);
+    background-color: var(--blac);
+    cursor: pointer;
+}
+.choose-goal-img{width: 270px; display:none}
+
+@media screen and (min-width:768px){
+    #choose-goal-section{
+        display: grid;
+        grid-template-columns: 60% auto;
+    }
+    
+    .choose-goal-img{
+        display:inline;
+        margin: auto 0px auto auto;
+    }
+}
+@media screen and (min-width:1024px){
+    #choose-goal-section{
+        display: grid;
+        grid-template-columns: 70% auto;
+    }
+    .choose-goal-img{
+        display:inline;
+        margin: auto 20px auto auto;
+    }
+}    
