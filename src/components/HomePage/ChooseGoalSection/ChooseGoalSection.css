@@ -5,9 +5,7 @@
     box-sizing: border-box;
     border-radius: 15px;
 }
-.choose-goal-section-header{
-    font-weight: 600;
-}
+
 .choose-goal-list{
     margin-top: 40px;
     display: flex;
@@ -41,6 +39,7 @@
     #choose-goal-section{
         display: grid;
         grid-template-columns: 60% auto;
+        padding: 25px;
     }
     
     .choose-goal-img{

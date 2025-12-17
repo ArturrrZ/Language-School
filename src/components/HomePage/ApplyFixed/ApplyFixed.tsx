@@ -25,6 +25,7 @@ function ApplyFixed({apply,setApply}: Props) {
     
         // reset controlled checkboxes
         setTerms(false)
+        setApply({...apply, display:false})
       }
       function handleClickButton() {
         alert('Redirect to Telegram')

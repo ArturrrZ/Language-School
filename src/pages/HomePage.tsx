@@ -4,6 +4,8 @@ import GroupSection from '../components/HomePage/GroupSection/GroupSection';
 import ChooseGoalSection from '../components/HomePage/ChooseGoalSection/ChooseGoalSection';
 import type {ApplyType} from '../types.ts'
 import ApplyFixed from '../components/HomePage/ApplyFixed/ApplyFixed.tsx';
+import SpecialOfferSection from '../components/HomePage/SpecialOfferSection/SpecialOfferSection.tsx';
+
 
 type Props = {}
 
@@ -19,6 +21,7 @@ function HomePage({}: Props) {
       <GroupSection />
       <ChooseGoalSection setApply={setApply}/>
       <ApplyFixed apply={apply} setApply={setApply}/>
+      <SpecialOfferSection setApply={setApply}/>
     </>
   )
 }

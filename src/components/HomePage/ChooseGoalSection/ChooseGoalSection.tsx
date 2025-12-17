@@ -20,7 +20,7 @@ function ChooseGoalSection({setApply}: Props) {
   return (
     <section id='choose-goal-section'>
       <div className="choose-goal-left">
-        <h2 className="choose-goal-section-header">Choose a goal - we'll find the best solution!</h2>
+        <h2 className="choose-goal-section-header sH">Choose a goal - we'll find the best solution!</h2>
         <div className="choose-goal-list">
           {goals.map((g, i) => (
            <div onClick={()=>{setApply({display:true, title:g.title, text:g.text})}} className="choose-goal-box" id={g.title} key={g.title + i}>
