@@ -25,6 +25,7 @@ body.apply-fixed-open {
 .apply-main{
     background-color: var(--whit);
     display:flex;
+    gap:5px;
     /* justify-content: center; */
     /* align-items: center; */
     flex-direction: column;
@@ -40,9 +41,13 @@ body.apply-fixed-open {
     flex-direction: row;
 }
 
-
+.apply-title{
+    margin-bottom:0px;
+}
 @media screen and (min-width:768px){
     .apply-main {
         max-width: 500px;
+        gap: 10px;
     }
+
 }
