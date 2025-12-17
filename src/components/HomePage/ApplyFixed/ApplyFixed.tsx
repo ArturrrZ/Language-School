@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useRef} from 'react'
 import type {ApplyType} from '../../../types'
 import './ApplyFixed.css'
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
@@ -10,29 +10,29 @@ type Props = {
 }
 
 function ApplyFixed({apply,setApply}: Props) {
-    function handleOutsideClick(e:MouseEvent){
-        let insideApply = e.target.closest('.apply-main');
-        if(!insideApply){
-            setApply({...apply,display:false});
-        }
-    }
+    const mainRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
-    if (apply.display) {
-      document.body.classList.add('apply-fixed-open');
-      document.addEventListener('click', handleOutsideClick, true);
-    } else {
-      document.body.classList.remove('apply-fixed-open');
-    }
-    return () => {
-      document.body.classList.remove('apply-fixed-open');
-      document.removeEventListener('click', handleOutsideClick, true)
-    };
-    }, [apply.display]);
+      function handleOutsideClick(e: MouseEvent) {
+        if (mainRef.current && !mainRef.current.contains(e.target as Node)) {
+          setApply({ ...apply, display: false });
+        }
+      }
+      if (apply.display) {
+        document.body.classList.add('apply-fixed-open');
+        document.addEventListener('mousedown', handleOutsideClick, true);
+      } else {
+        document.body.classList.remove('apply-fixed-open');
+      }
+      return () => {
+        document.body.classList.remove('apply-fixed-open');
+        document.removeEventListener('mousedown', handleOutsideClick, true);
+      };
+    }, [apply, setApply]);
 
   if (!apply.display) return null;
   return (
     <div className="apply-fixed open">
-      <div className="apply-main">
+      <div className="apply-main" ref={mainRef}>
         <div className="apply-top">
           <h2>{apply.title}</h2>
           <IconButton aria-label="close" onClick={() => { setApply({ ...apply, display: false }) }}>
