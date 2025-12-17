@@ -2,14 +2,10 @@ import React,{useState} from 'react'
 import Greeting from '../components/HomePage/Greeting/Greeting';
 import GroupSection from '../components/HomePage/GroupSection/GroupSection';
 import ChooseGoalSection from '../components/HomePage/ChooseGoalSection/ChooseGoalSection';
+import type {ApplyType} from '../types.ts'
+import ApplyFixed from '../components/HomePage/ApplyFixed/ApplyFixed.tsx';
 
 type Props = {}
-
-type ApplyType = {
-  display: boolean;
-  title: string;
-  text: string;
-};
 
 function HomePage({}: Props) {
   const [apply, setApply] = useState<ApplyType>({
@@ -22,10 +18,7 @@ function HomePage({}: Props) {
       <Greeting />
       <GroupSection />
       <ChooseGoalSection setApply={setApply}/>
-      <div id="apply">
-        <h3>{apply.title}</h3>
-        <p>{apply.text}</p>
-      </div>
+      <ApplyFixed apply={apply} setApply={setApply}/>
     </>
   )
 }
