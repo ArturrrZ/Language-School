@@ -5,7 +5,8 @@ import ChooseGoalSection from '../components/HomePage/ChooseGoalSection/ChooseGo
 import type {ApplyType} from '../types.ts'
 import ApplyFixed from '../components/HomePage/ApplyFixed/ApplyFixed.tsx';
 import SpecialOfferSection from '../components/HomePage/SpecialOfferSection/SpecialOfferSection.tsx';
-
+import PricingSection from '../components/HomePage/PricingSection/PricingSection.tsx';
+import MyPricingSection from '../components/HomePage/MyPricingSection/MyPricingSection.tsx';
 
 type Props = {}
 
@@ -15,6 +16,7 @@ function HomePage({}: Props) {
     title:'Test title',
     text: 'test text text text'
   })
+  
   return (
     <>
       <Greeting />
@@ -22,6 +24,7 @@ function HomePage({}: Props) {
       <ChooseGoalSection setApply={setApply}/>
       <ApplyFixed apply={apply} setApply={setApply}/>
       <SpecialOfferSection setApply={setApply}/>
+      <MyPricingSection />
     </>
   )
 }

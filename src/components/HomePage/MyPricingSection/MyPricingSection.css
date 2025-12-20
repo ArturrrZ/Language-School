@@ -1,0 +1,78 @@
+.pricing-section-header{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.pricing-cards{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.pricing-card {
+    border: 1px solid var(--mui-border);
+    border-radius: 15px;
+    padding: 20px;
+    background-color: var(--s-bg);
+    width: 310px;
+}
+.pricing-card-bottom{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-between;
+    height: 500px;
+}
+.pricing-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+.pricing-card li {
+    margin-bottom: 10px;
+    font-size: 0.75rem;
+}
+.pricing-card-li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+.pricing-card-li svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.pricing-card-button {
+    /* margin-top: 15px; */
+    padding: 10px 20px;
+    height: 50px;
+    background-color: var(--purp);
+    color:var(--whit);
+    border:none;
+    border-radius: 15px;
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pricing-card-button:hover{
+    cursor:pointer;
+    background-color: var(--blac);
+}
+
+.popular-card {
+    background-color: var(--purp-light);
+    color: var(--whit)
+}
+
+.mychip{
+    display: inline-block;
+    padding: 4px 12px;
+    border: none;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 400;
+    margin-top: 10px;
+    color: var(--blac);
+    background-color: var(--yell);
+    cursor: pointer;
+}
