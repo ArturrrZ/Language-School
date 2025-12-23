@@ -1,0 +1,50 @@
+.levels-more-section {
+    position: fixed;
+    inset: 0;
+    width:100%;
+    height: 100%;
+    background-color: rgb(0,0,0,0.7);
+    opacity: 0;
+    z-index: 1000;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    display:flex;
+    justify-content: center;
+    align-items: end;
+}
+.levels-more-section.open{
+    opacity: 1;
+    pointer-events: auto;
+}
+body.apply-fixed-open {
+    overflow: hidden;
+}
+.levels-main{
+    background-color: var(--whit);
+    display:flex;
+    gap:5px;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    min-height: 70vh;
+    box-sizing: border-box;
+    transform: translateY(300%);
+    transition: transform 0.4s ease-out;
+}
+
+.levels-more-section.open .levels-main {
+    transform: translateY(0);
+}
+
+@media  screen and (min-width: 768px) {
+    .levels-more-section{
+        align-items: center;
+    }
+    .levels-main {
+        width: 700px;
+        height:  400px;
+        gap: 10px;
+    }
+
+}

@@ -31,6 +31,7 @@ body.apply-fixed-open {
     flex-direction: column;
     padding: 20px;
     border-radius: 15px;
+    min-width: 300px;
     max-width: 500px;
     box-sizing: border-box;
 }
@@ -46,8 +47,10 @@ body.apply-fixed-open {
 }
 @media screen and (min-width:768px){
     .apply-main {
+        min-width: 499px;
         max-width: 500px;
         gap: 10px;
+
     }
 
 }

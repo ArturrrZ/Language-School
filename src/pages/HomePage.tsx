@@ -8,6 +8,8 @@ import SpecialOfferSection from '../components/HomePage/SpecialOfferSection/Spec
 import PricingSection from '../components/HomePage/PricingSection/PricingSection.tsx';
 import MyPricingSection from '../components/HomePage/MyPricingSection/MyPricingSection.tsx';
 import LevelsSection from '../components/HomePage/LevelsSection/LevelsSection.tsx';
+import LevelsMore from '../components/HomePage/LevelsMore/LevelsMore.tsx';
+
 type Props = {}
 
 function HomePage({}: Props) {
@@ -16,7 +18,16 @@ function HomePage({}: Props) {
     title:'Test title',
     text: 'test text text text'
   })
-  
+  const [levelsMore, setLevelsMore] = useState<{
+    display: boolean;
+    whatCanYouDo: string[];
+    duration: string;
+  }>
+  ({
+    display:false,
+    whatCanYouDo: [],
+    duration:'',
+  });
   return (
     <>
       <Greeting />
@@ -25,7 +36,8 @@ function HomePage({}: Props) {
       <ApplyFixed apply={apply} setApply={setApply}/>
       <SpecialOfferSection setApply={setApply}/>
       <MyPricingSection />
-      <LevelsSection />
+      <LevelsSection setLevelsMore={setLevelsMore}/>
+      <LevelsMore  levelsMore={levelsMore} setLevelsMore={setLevelsMore}/>
     </>
   )
 }

@@ -8,7 +8,9 @@ import B2 from '../../../assets/levels/b2.jpg';
 import C1 from '../../../assets/levels/c1.jpg';
 
 
-type Props = {}
+type Props = {
+        setLevelsMore: (value: {display: boolean, whatCanYouDo: string[], duration: string})=>void
+}
 const levels = [
     {
         number: 'A1',
@@ -116,7 +118,8 @@ const levels = [
         }
     }
 ];
-function LevelsSection({}: Props) {
+function LevelsSection({setLevelsMore}: Props) {
+
   return (
     <section className="levels-section">
         <div className="levels-section-header text-center">
@@ -132,7 +135,7 @@ function LevelsSection({}: Props) {
                     </div>
                     <div className="level-title">{level.title}</div>
                     <div className="level-description">{level.description}</div>
-                    <div className="level-more">More</div>
+                    <div className="level-more" onClick={()=>{setLevelsMore({display:true, whatCanYouDo: level.more.whatCanYouDo, duration: level.more.timeToBeat})}}>More</div>
                     <img className='level-img' src={level.img} alt={level.imgAlt} />
                 </div>))}
         </div>    
