@@ -127,7 +127,7 @@ function LevelsSection({}: Props) {
                     <div className="level-title">{level.title}</div>
                     <div className="level-description">{level.description}</div>
                     <div className="level-more">More</div>
-                    <img className='level-img' src={level.img} alt={level.imgAlt} />
+                    <img className='level-img' src={level.img?level.img:''} alt={level.imgAlt} />
                 </div>))}
         </div>    
     </section>

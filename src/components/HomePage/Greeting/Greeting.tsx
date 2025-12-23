@@ -31,7 +31,7 @@ function Greeting({}: Props) {
   }
 
   return (
-    <section id='home_greeting'>
+    <section id='home_greeting' className=''>
       <div id="home_main">
 
         <div id="home_top">

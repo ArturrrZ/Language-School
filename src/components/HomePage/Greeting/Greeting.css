@@ -1,8 +1,8 @@
 #home_greeting{
     background: linear-gradient(to bottom, rgb(0, 103, 103) 0%, rgb(25, 40, 63) 100%);
-    width: 100vw;
+    width: 100%;
     box-sizing: border-box;
-    margin-left: calc(-50vw + 50%);
+    /* margin-left: calc(-50vw + 50%); */
     color: var(--whit);
     /* padding: 5%; */
     border-radius: 15px;

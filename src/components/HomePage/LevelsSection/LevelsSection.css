@@ -1,11 +1,10 @@
 .levels-section{
     background-color: var(--s-bg);
-    width: 100vw;
     box-sizing: border-box;
-    margin-left: calc(-50vw + 50%);
     padding-top: 40px;
     padding-bottom: 40px;
-
+    width: 100%;
+    margin: 60px 0;
 }
 .levels-section-header{
         max-width: 90%;
@@ -18,22 +17,64 @@
     overflow-x: auto;
     gap: 2rem;
     margin-top: 2rem;
+    padding: 0 16px;
 }
 .level-box{
     background: var(--whit);
   border-radius: 15px;
   min-width: 72vw;
-  height: 350px;
+  height: 400px;
   box-sizing: border-box;
   /* max-width: 320px;
   flex: 0 0 260px; */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  align-items: left;
   padding: 28px 18px 22px 18px;
   box-shadow: 0 0px 4px 0 rgba(0,0,0,0.14);
 }
+.level-box-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.level-number{
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.level-duration{
+  font-size: 0.9rem;
+  /* color: #666; */
+  background-color: var(--yell);
+  padding: 4px 8px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+.level-description{
+  margin: 12px 0px;
+  font-size: 0.7rem;
+  /* color: #333; */
+  flex-grow: 0;
+}
+.level-more{
+  font-size: 0.8rem;
+  color: var(--blue);
+  font-weight: 600;
+  cursor: pointer;
+}
+.level-more:hover{
+  text-decoration: underline;
+}
 
+.level-img{
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
 @media screen and (min-width: 768px) {
   .levels-section-levels {
     flex-wrap: wrap;

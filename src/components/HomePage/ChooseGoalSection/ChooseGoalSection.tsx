@@ -18,7 +18,7 @@ const goals = [
 
 function ChooseGoalSection({setApply}: Props) {
   return (
-    <section id='choose-goal-section'>
+    <section id='choose-goal-section' className='main'>
       <div className="choose-goal-left">
         <h2 className="choose-goal-section-header sH">Choose a goal - we'll find the best solution!</h2>
         <div className="choose-goal-list">

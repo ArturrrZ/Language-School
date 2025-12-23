@@ -1,11 +1,10 @@
 .special-offer{
     background-color: rgb(36, 36, 36);
-    width:100%;
     /* padding: 0px 0px 20px 20px; */
     padding: 20px;
     box-sizing: border-box;
     border-radius: 15px;
-    margin: 60px 0px;
+    margin: 60px auto;
     position: relative;
     /* overflow:visible; */
     overflow:hidden;

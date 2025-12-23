@@ -1,13 +1,14 @@
-#main {
+.main {
   width: 90%;
   margin: 0 auto;
 }
 @media screen and (min-width: 768px){
-  #main {
+  .main {
   max-width: 1150px;
+  margin: 0 auto;
 }
 }
-#main{margin-top:50px;}
+.main{margin-top:50px;}
 .custom-button{
   border: 1px solid black;
 }

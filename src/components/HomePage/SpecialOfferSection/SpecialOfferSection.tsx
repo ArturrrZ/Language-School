@@ -10,7 +10,7 @@ type Props = {
 
 function SpecialOfferSection({setApply}: Props) {
   return (
-    <section className='special-offer'>
+    <section className='special-offer main'>
         <img src={pointer} alt='pointer' className='special-offer-pointer'/>
         <div className="special-offer-main">
             <span className='special-offer-header2'>special offer</span>

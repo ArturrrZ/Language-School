@@ -58,7 +58,7 @@ const tiers = [
 ];
 function MyPricingSection({}: Props) {
   return (
-    <section>
+    <section className='main'>
         <div className="pricing-section-header">
             <h2 className='sH'>Our Pricing</h2>
             <p>Choose the plan that best fits your needs.</p>

@@ -44,7 +44,7 @@ const groupFeatures = [
 
 function GroupSection({}: Props) {
   return (
-    <section className="group-section">
+    <section className="group-section main">
       <div className="group-section-header">
         <h2>This Works in a Group</h2>
         <p>At our school, you don’t adapt to the program—the program adapts to you. Here’s how it works:</p>
