@@ -1,6 +1,12 @@
 import React from 'react'
 import './LevelsSection.css'
 import { duration } from '@mui/material';
+import A1 from '../../../assets/levels/a1.jpg';
+import A2 from '../../../assets/levels/a2.jpg';
+import B1 from '../../../assets/levels/b1.jpg';
+import B2 from '../../../assets/levels/b2.jpg';
+import C1 from '../../../assets/levels/c1.jpg';
+
 
 type Props = {}
 const levels = [
@@ -9,8 +15,8 @@ const levels = [
         title: 'Beginner',
         description: 'Start your language journey with basic phrases and expressions.',
         duration: '3 Months',
-        img: null,
-        imgAlt: '',
+        img: A1,
+        imgAlt: 'A1 Level',
         more: {
             whatCanYouDo: [
                 'Introduce yourself and others',
@@ -30,8 +36,8 @@ const levels = [
         title: 'Elementary',
         description: 'Build on your basics and start having simple conversations.',
         duration: '4 Months',
-        img: null,
-        imgAlt: '',
+        img: A2,
+        imgAlt: 'A2 Level',
         more: {
             whatCanYouDo: [
                 'Understand sentences and frequently used expressions',
@@ -51,8 +57,8 @@ const levels = [
         title: 'Intermediate',
         description: 'Gain confidence in daily conversations and familiar topics.',
         duration: '5 Months',
-        img: null,
-        imgAlt: '',
+        img: B1,
+        imgAlt: 'B1 Level',
         more: {
             whatCanYouDo: [
                 'Understand the main points of clear standard input',
@@ -72,8 +78,8 @@ const levels = [
         title: 'Upper Intermediate',
         description: 'Express yourself fluently and understand complex topics.',
         duration: '6 Months',
-        img: null,
-        imgAlt: '',
+        img: B2,
+        imgAlt: 'B2 Level',
         more: {
             whatCanYouDo: [
                 'Understand the main ideas of complex texts',
@@ -93,8 +99,8 @@ const levels = [
         title: 'Advanced',
         description: 'Master complex language use and express yourself with precision.',
         duration: '8 Months',
-        img: null,
-        imgAlt: '',
+        img: C1,
+        imgAlt: 'C1 Level',
         more: {
             whatCanYouDo: [
                 'Understand a wide range of demanding, longer texts',
@@ -127,7 +133,7 @@ function LevelsSection({}: Props) {
                     <div className="level-title">{level.title}</div>
                     <div className="level-description">{level.description}</div>
                     <div className="level-more">More</div>
-                    <img className='level-img' src={level.img?level.img:''} alt={level.imgAlt} />
+                    <img className='level-img' src={level.img} alt={level.imgAlt} />
                 </div>))}
         </div>    
     </section>
