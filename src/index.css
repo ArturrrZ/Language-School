@@ -31,6 +31,23 @@ html {
     font-weight: 600;
     font-size: 1.5rem;
 }
+.myButton{
+    padding: 10px 20px;
+    height: 50px;
+    background-color: var(--purp);
+    color:var(--whit);
+    border:none;
+    border-radius: 15px;
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.myButton:hover{
+    cursor:pointer;
+    background-color: var(--blac);
+}
+
 .text-center {
     text-align: center;
 }

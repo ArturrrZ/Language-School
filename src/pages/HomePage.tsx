@@ -35,9 +35,9 @@ function HomePage({}: Props) {
       <ChooseGoalSection setApply={setApply}/>
       <ApplyFixed apply={apply} setApply={setApply}/>
       <SpecialOfferSection setApply={setApply}/>
-      <MyPricingSection />
+      <MyPricingSection setApply={setApply}/>
       <LevelsSection setLevelsMore={setLevelsMore}/>
-      <LevelsMore  levelsMore={levelsMore} setLevelsMore={setLevelsMore}/>
+      <LevelsMore  levelsMore={levelsMore} setLevelsMore={setLevelsMore} setApply={setApply}/>
     </>
   )
 }

@@ -27,7 +27,7 @@ body.apply-fixed-open {
     padding: 20px;
     border-radius: 15px;
     width: 100%;
-    min-height: 70vh;
+    min-height: 85vh;
     box-sizing: border-box;
     transform: translateY(300%);
     transition: transform 0.4s ease-out;
@@ -36,6 +36,30 @@ body.apply-fixed-open {
 .levels-more-section.open .levels-main {
     transform: translateY(0);
 }
+.levels-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.levels-main h2{
+    font-size: 1.1rem;
+    margin-bottom: 0px;
+}
+.levels-main ul{
+    padding: 0 20px;
+    margin: 0;
+}
+.levels-main ul li {
+    font-size: 0.8rem;
+}
+.duration-info h3{
+    font-size: 1rem;
+    margin: 10px 0 0px 0;
+}
+.duration-info p{
+    font-size: 0.8rem;
+    margin: 5px 0 15px 0;
+}
 
 @media  screen and (min-width: 768px) {
     .levels-more-section{
@@ -43,8 +67,9 @@ body.apply-fixed-open {
     }
     .levels-main {
         width: 700px;
-        height:  400px;
+        /* height:  500px; */
         gap: 10px;
+        min-height: 50vh;
     }
 
 }

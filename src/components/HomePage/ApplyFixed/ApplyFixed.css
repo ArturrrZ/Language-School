@@ -8,6 +8,9 @@
     z-index: 1000;
     transition: opacity 0.3s ease;
     pointer-events: none;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 .apply-fixed.open{
     opacity: 1;

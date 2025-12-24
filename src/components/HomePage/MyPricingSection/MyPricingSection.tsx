@@ -2,8 +2,11 @@ import React from 'react'
 import './MyPricingSection.css'
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
+import type { ApplyType } from '../../../types.ts';
 
-type Props = {}
+type Props = {
+  setApply: (value: ApplyType) => void;
+}
 const tiers = [
     {
     title: 'Groups',
@@ -56,7 +59,7 @@ const tiers = [
     buttonColor: 'primary',
   },
 ];
-function MyPricingSection({}: Props) {
+function MyPricingSection({setApply}: Props) {
   return (
     <section className='main'>
         <div className="pricing-section-header">
@@ -90,7 +93,7 @@ function MyPricingSection({}: Props) {
                     </li>
                   )}
                 </ul>
-                <button className='pricing-card-button'>{tier.buttonText}</button>
+                <button className='pricing-card-button' onClick={()=>{setApply({display:true, title:tier.title, text:`${tier.title} plan selected. Price: $${tier.price} per session.`})}}>{tier.buttonText}</button>
                 </div>
             </div>
           ))}

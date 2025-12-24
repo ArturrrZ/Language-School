@@ -48,13 +48,13 @@ function ApplyFixed({apply,setApply}: Props) {
       };
     }, [apply, setApply]);
 
-  if (!apply.display) return null;
+  // if (!apply.display) return null;
 
   return (
-    <div className="apply-fixed open">
+    <div className={`apply-fixed ${apply.display?'open':''}`}>
       <form className="apply-main" ref={mainRef} onSubmit={handleSubmit}>
         <div className="apply-top">
-          <h2 className='apply-title'>English for {apply.title==='Personal'&&' any '}{apply.title}{apply.title==='Personal'&&' reason'}</h2>
+          <h2 className='apply-title'>{apply.title}</h2>
           <IconButton aria-label="close" onClick={() => { setApply({ ...apply, display: false }) }}>
             <CloseIcon />
           </IconButton>

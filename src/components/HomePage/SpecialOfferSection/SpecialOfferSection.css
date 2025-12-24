@@ -32,11 +32,16 @@
     margin: 10px 0px;
 }
 .special-offer-purchase{
+    padding: 10px 20px;
     height: 50px;
     background-color: var(--purp);
     color:var(--whit);
     border:none;
     border-radius: 15px;
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 .special-offer-purchase:hover{
     cursor:pointer;
