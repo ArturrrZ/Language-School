@@ -13,7 +13,7 @@
   --yell: rgb(211, 255, 36);
   --blac: rgb(0, 0, 0);
   --whit: rgb(255,255,255);
-
+  --star: rgb(240, 176, 0);
   font-family: "Google Sans Flex", system-ui, sans-serif;
   color: var(--pr-color);
 }

@@ -6,7 +6,7 @@
     background-color: rgb(0,0,0,0.7);
     opacity: 0;
     z-index: 1000;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease-in-out;
     pointer-events: none;
     display:flex;
     justify-content: center;

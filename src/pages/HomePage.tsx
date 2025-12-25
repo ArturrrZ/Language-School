@@ -9,6 +9,7 @@ import PricingSection from '../components/HomePage/PricingSection/PricingSection
 import MyPricingSection from '../components/HomePage/MyPricingSection/MyPricingSection.tsx';
 import LevelsSection from '../components/HomePage/LevelsSection/LevelsSection.tsx';
 import LevelsMore from '../components/HomePage/LevelsMore/LevelsMore.tsx';
+import ReviewSection from '../components/HomePage/ReviewSection/ReviewSection.tsx';
 
 type Props = {}
 
@@ -38,6 +39,7 @@ function HomePage({}: Props) {
       <MyPricingSection setApply={setApply}/>
       <LevelsSection setLevelsMore={setLevelsMore}/>
       <LevelsMore  levelsMore={levelsMore} setLevelsMore={setLevelsMore} setApply={setApply}/>
+      <ReviewSection />
     </>
   )
 }
