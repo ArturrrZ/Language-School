@@ -11,6 +11,7 @@ import LevelsSection from '../components/HomePage/LevelsSection/LevelsSection.ts
 import LevelsMore from '../components/HomePage/LevelsMore/LevelsMore.tsx';
 import ReviewSection from '../components/HomePage/ReviewSection/ReviewSection.tsx';
 
+
 type Props = {}
 
 function HomePage({}: Props) {

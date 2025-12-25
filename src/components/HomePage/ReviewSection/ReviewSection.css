@@ -1,16 +1,19 @@
+
 .review-section{ 
     background-color: var(--s-bg);
     padding-top: 40px;
     padding-bottom: 40px;
-    padding-left: 5%;
 }
-
+.review-header{
+    text-align: center;
+}
 .reviews{
     display: flex;
     gap: 20px;
     overflow-x: auto;
     flex-wrap: nowrap;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
+    padding: 0 5%;
 }
 .review{
     min-width: 400px;
@@ -49,7 +52,7 @@
 }
 
 @media screen and (min-width: 768px) {
-    .review-section{ 
-        padding-left: 12%;
+    .reviews{ 
+        padding: 0 5%;
     }
 }
