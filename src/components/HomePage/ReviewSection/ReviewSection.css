@@ -13,8 +13,9 @@
     overflow-x: auto;
     flex-wrap: nowrap;
     padding-bottom: 30px;
-    padding: 0 5%;
+    padding: 20px 5%;
 }
+/* old review card below */
 .review{
     min-width: 400px;
     display: flex;
@@ -53,6 +54,6 @@
 
 @media screen and (min-width: 768px) {
     .reviews{ 
-        padding: 0 5%;
+        padding: 10px 5%;
     }
 }
