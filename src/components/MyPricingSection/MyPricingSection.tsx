@@ -2,7 +2,7 @@ import React from 'react'
 import './MyPricingSection.css'
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
-import type { ApplyType } from '../../../types.ts';
+import type { ApplyType } from '../../types.ts';
 
 type Props = {
   setApply: (value: ApplyType) => void;

@@ -1,0 +1,80 @@
+.teachers-section {
+    /* background-color: aqua; */
+}
+.teachers{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+.teacher-card{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    background-color: var(--s-bg);
+    border-radius: 15px;
+    border: 1px solid var(--mui-border);
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.teacher-card.teacher-selected{
+    background-color: var(--blac);
+    color:var(--whit);
+}
+
+.teacher-card:hover{
+    background-color: var(--blac);
+    color:var(--whit);
+    cursor: pointer;
+}
+
+.teacher-name-experience{
+    /* display: flex;
+    flex-direction: column;
+    gap: 5px; */
+}
+.teacher-name{
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0;
+}
+.teacher-experience{
+    font-size: 0.7rem;
+    margin: 0;
+}
+
+.selected-teacher{
+    margin-top: 20px;
+    background-color: var(--s-bg);
+    border-radius: 15px;
+    padding:    px;
+    /* border: 1px solid var(--mui-border); */
+}
+
+.selected-teacher-photo{
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+    object-fit: cover;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.selected-teacher-message{margin-top: 0px;}
+
+@media (min-width: 768px) {
+
+    .selected-teacher{
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .selected-teacher-photo{
+        float: none;
+        margin: 0;
+    }
+}

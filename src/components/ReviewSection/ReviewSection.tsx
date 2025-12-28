@@ -1,11 +1,11 @@
 import React from 'react'
 import './ReviewSection.css'
-import Review from '../../Review/Review';
-import face1 from '../../../assets/faces/face1.jpg';
-import face2 from '../../../assets/faces/face2.jpg';
-import face3 from '../../../assets/faces/face3.jpg';
-import face4 from '../../../assets/faces/face4.jpg';
-import face5 from '../../../assets/faces/face5.jpg';
+import Review from '../Review/Review';
+import face1 from '../../assets/faces/face1.jpg';
+import face2 from '../../assets/faces/face2.jpg';
+import face3 from '../../assets/faces/face3.jpg';
+import face4 from '../../assets/faces/face4.jpg';
+import face5 from '../../assets/faces/face5.jpg';
 
 type Props = {}
 const reviews = [
