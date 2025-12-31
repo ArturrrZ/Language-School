@@ -1,0 +1,33 @@
+.greeting-kids-section{
+    margin-top: 50px;
+    background: linear-gradient(to bottom, var(--purp-light) 0%, var(--purp) 70%);
+    padding: 20px;
+    border-radius: 15px;
+}
+.greeting-kids-text{
+    max-width: 500px;
+}
+.greeting-kids-header{
+        margin-top: 0px;
+        font-size: 2rem;
+    }
+.kids-greeting-image{
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .greeting-kids-section{
+        flex-direction: row;
+        background: linear-gradient(to right, var(--purp-light) 0%, var(--purp) 70%);
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 40px;
+        padding: 40px;
+    }
+    .kids-greeting-image{
+        display: block;
+        width: 100%;
+        border-radius: 15px;
+    }
+    
+}

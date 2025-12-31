@@ -11,7 +11,7 @@
         max-width: 90%;
         padding-top: 5px;
         padding-bottom: 0px;
-        margin: 0 auto;
+        margin: 50px auto;
 }
 #home_top{
     margin:0px;
@@ -29,7 +29,7 @@
         box-sizing: border-box;
         color:var(--blac);
     }
-#home_text {color: var(--blac); font-size: 30px; font-weight: 600;}   
+#home_text {color: var(--blac); font-size: 1.5rem; font-weight: 600;}   
 #home_text_2{
     display:block;
     color: var(--blac);
@@ -55,7 +55,7 @@
         max-width: 1150px;
         padding-top: 25px;
         padding-bottom: 55px;
-        margin: 0 auto;
+        margin: 50px auto;
         display:grid;
         grid-template-columns: 1fr 1fr;
         gap: 50px;
