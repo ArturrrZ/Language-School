@@ -21,3 +21,11 @@ export type PriceOption = {
     buttonVariant: 'contained' | 'outlined' | 'text';
     buttonColor: 'primary' | 'secondary' | 'inherit' | 'success' | 'error' | 'info' | 'warning';
 }
+
+export type ReviewType = {
+  id: number;
+  name: string;
+  stars: string;
+  review: string;
+  face?: string | null;
+}
