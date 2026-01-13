@@ -12,7 +12,8 @@ import MyPricingSection from '../components/MyPricingSection/MyPricingSection.ts
 import type { PriceOption } from '../types.ts';
 import type { ReviewType } from '../types.ts';
 import ReviewSection from '../components/ReviewSection/ReviewSection.tsx';
-
+import FAQ from '../components/FAQ/FAQ.tsx';
+import type { FAQType } from '../types.ts';
 
 const kidsTeachers:TeacherType[] = [
   {id:1, name:'Alice Smith', experience:'5 years of teaching experience', photo: face1, message:'I love the energy and curiosity kids bring to every lesson! Their genuine excitement when learning something new is incredibly rewarding. Kids are fearless learners who aren\'t afraid to make mistakes. Watching their confidence grow week by week is the best part of my job.'
@@ -91,6 +92,41 @@ const reviews: ReviewType[] = [
   {id:10, name: 'Sophia Anderson', stars:'★★★★★', review: 'My son went from being hesitant to speak English to confidently having conversations. The teachers know how to make kids feel comfortable and encouraged.', face: null}
 ]
 
+const questions: FAQType[] = [
+    {
+        question: "What age group is this program for?",
+        answer: "Our kids program is designed for children ages 5-12. We group students by age and English level to ensure the best learning experience."
+    },
+    {
+        question: "How long are the kids' lessons?",
+        answer: "Group lessons are 45 minutes and individual lessons are 40 minutes. This duration is optimal for maintaining children's attention and engagement."
+    },
+    {
+        question: "Do you offer trial lessons for kids?",
+        answer: "Yes! We offer a free trial lesson so your child can meet the teacher and experience our teaching style before committing to a course."
+    },
+    {
+        question: "What if my child is shy or has never studied English before?",
+        answer: "Our teachers are experienced in working with shy children and complete beginners. We create a supportive, fun environment where kids feel comfortable making mistakes and learning."
+    },
+    {
+        question: "How do you keep kids engaged during online lessons?",
+        answer: "We use interactive games, songs, videos, and visual materials. Lessons include movement activities and hands-on tasks to keep children active and interested."
+    },
+    {
+        question: "Will my child have homework?",
+        answer: "Yes, but it's fun! Homework includes games, short videos, and creative tasks that typically take 10-15 minutes. We focus on making practice enjoyable."
+    },
+    {
+        question: "Can I monitor my child's progress?",
+        answer: "Absolutely! Parents receive regular progress reports, and you're welcome to observe lessons. We also provide feedback after each class about what was covered."
+    },
+    {
+        question: "What materials do I need for my child's lessons?",
+        answer: "Just a computer/tablet with stable internet and a quiet space. All learning materials are provided digitally. Occasionally we might suggest simple items like crayons or paper for activities."
+    }
+]
+
 type Props = {}
 
 function KidsPage({}: Props) {
@@ -102,6 +138,8 @@ function KidsPage({}: Props) {
       <Teachers teachers={kidsTeachers} header='What our teachers like about working with Kids'/>
       <MyPricingSection options={pricingOptions}/>
       <ReviewSection reviews={reviews} header='What parents say'/>
+      <FAQ questions={questions}/>
+
     </>
   )
 }

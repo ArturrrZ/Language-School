@@ -29,3 +29,8 @@ export type ReviewType = {
   review: string;
   face?: string | null;
 }
+
+export type FAQType = {
+  question: string;
+  answer: string;
+}
