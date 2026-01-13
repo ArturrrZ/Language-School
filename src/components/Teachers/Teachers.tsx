@@ -6,13 +6,14 @@ import { Avatar } from '@mui/material';
 
 type Props = {
     teachers: TeacherType[]; 
+    header?: string;
 }
 
-function Teachers({teachers}: Props) {
+function Teachers({teachers, header}: Props) {
     const [selectedTeacher, setSelectedTeacher] = useState<TeacherType | null>(teachers[0] || null);
   return (
     <section className="teachers-section main">
-        <h2 className="sH text-center teachers-header">Meet Our Teachers</h2>
+        <h2 className="sH text-center teachers-header">{header || "Meet Our Teachers"}</h2>
         <div className="teachers">
       {teachers.map(teacher => (
         <div key={teacher.id} className={`teacher-card ${selectedTeacher?.id === teacher.id ? 'teacher-selected' : ''}`} onClick={() => setSelectedTeacher(teacher)}>

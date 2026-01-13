@@ -3,11 +3,13 @@ import './MyPricingSection.css'
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
 import type { ApplyType } from '../../types.ts';
+import type { PriceOption } from '../../types.ts';
 
 type Props = {
-  setApply: (value: ApplyType) => void;
+  setApply?: (value: ApplyType) => void;
+  options?: PriceOption[];
 }
-const tiers = [
+const tiersDefault: PriceOption[] = [
     {
     title: 'Groups',
     subheader: 'Most popular',
@@ -59,7 +61,18 @@ const tiers = [
     buttonColor: 'primary',
   },
 ];
-function MyPricingSection({setApply}: Props) {
+function MyPricingSection({setApply, options}: Props) {
+  const tiers = options ?? tiersDefault;
+  function setApplyWrapper(value: ApplyType) {
+    if (setApply) {
+      setApply(value);
+    }
+    else {
+      window.scrollTo(
+        { top: 0, left: 0, behavior: 'smooth' }
+      );
+    }
+  }
   return (
     <section className='main'>
         <div className="pricing-section-header">
@@ -93,7 +106,7 @@ function MyPricingSection({setApply}: Props) {
                     </li>
                   )}
                 </ul>
-                <button className='pricing-card-button' onClick={()=>{setApply({display:true, title:tier.title, text:`${tier.title} plan selected. Price: $${tier.price} per session.`})}}>{tier.buttonText}</button>
+                <button className='pricing-card-button' onClick={()=>{setApplyWrapper({display:true, title:tier.title, text:`${tier.title} plan selected. Price: $${tier.price} per session.`})}}>{tier.buttonText}</button>
                 </div>
             </div>
           ))}

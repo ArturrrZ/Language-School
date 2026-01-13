@@ -11,3 +11,13 @@ export type TeacherType = {
   photo?: string;
   message: string;
 }
+
+export type PriceOption = {
+    title: string;
+    subheader?: string;
+    price: string;
+    description: string[];
+    buttonText: string;
+    buttonVariant: 'contained' | 'outlined' | 'text';
+    buttonColor: 'primary' | 'secondary' | 'inherit' | 'success' | 'error' | 'info' | 'warning';
+}
