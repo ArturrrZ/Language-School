@@ -1,17 +1,18 @@
-import { Box, Button, TextField } from '@mui/material'
-import React,{useState} from 'react'
-import { Link,  } from 'react-router-dom'
+import { Box, TextField } from '@mui/material';
+import React, { useState } from 'react'
+import { Link,  } from 'react-router-dom';
 
 type Props = {}
 
-function LoginPage({}: Props) {
+function RegisterPage({}: Props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   function handleClick() {
-    // Perform login logic here (e.g., API call)
-    alert(`Perform login logic here`);}
+    // Perform register logic here (e.g., API call)
+    alert(`Perform register logic here`);}
   return (
-    <Box className='login-page' 
+    <Box className='register-page' 
     sx={{ 
     width:{
       xs: '100%',
@@ -30,7 +31,7 @@ function LoginPage({}: Props) {
     gap: '20px' 
     
     }}>
-      <h2>Login</h2>
+      <h2>Register</h2>
       <TextField
         required
         type='email'
@@ -51,20 +52,29 @@ function LoginPage({}: Props) {
         variant="outlined"
         sx={{ width: '100%' }}
       />
-      <Link to="/forgot-password" style={{ alignSelf: 'flex-start', marginBottom: '10px', textDecoration: 'underline', color: 'black', fontSize: '0.75rem' }}>Forgot Password?</Link>
+      <TextField
+        onChange={(e) => setConfirmPassword(e.target.value)}
+      value={confirmPassword}
+        required
+        type='password'
+        id="outlined-basic"
+        label="Confirm Password"
+        variant="outlined"
+        sx={{ width: '100%' }}
+      />
       <button
         onClick={handleClick}
         type='submit'
         style={{ height: '56px', width: '100%', borderRadius: '8px',   }}
         className="pricing-card-button"
       >
-        Login
+        Register
       </button>
       <Box sx={{fontSize: '0.75rem'}}>
-        Don't have an account? <Link to="/register" style={{ textDecoration: 'underline', color: 'black', }}>Register</Link>
+        Already have an account? <Link to="/login" style={{ textDecoration: 'underline', color: 'black', }}>Login</Link>
       </Box>
     </Box>
   )
 }
 
-export default LoginPage
+export default RegisterPage

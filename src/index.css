@@ -3,6 +3,7 @@
 :root {
   /* line-height: 1.5; */
   /* font-weight: 400; */
+  --nav-height: 50px;
   --bg: rgb(255,255,255); 
   --s-bg: rgb(245,245,245);
   --mui-bg: rgba(247, 247, 250, 1);

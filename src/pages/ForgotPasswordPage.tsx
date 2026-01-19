@@ -1,15 +1,14 @@
-import { Box, Button, TextField } from '@mui/material'
-import React,{useState} from 'react'
-import { Link,  } from 'react-router-dom'
+import { Box, TextField } from '@mui/material';
+import React, { useState } from 'react'
+import {  Link } from 'react-router-dom';
 
 type Props = {}
 
-function LoginPage({}: Props) {
+function ForgotPasswordPage({}: Props) {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   function handleClick() {
-    // Perform login logic here (e.g., API call)
-    alert(`Perform login logic here`);}
+    // Perform forgot password logic here (e.g., API call)
+    alert(`Perform forgot password logic here`);}
   return (
     <Box className='login-page' 
     sx={{ 
@@ -30,7 +29,7 @@ function LoginPage({}: Props) {
     gap: '20px' 
     
     }}>
-      <h2>Login</h2>
+      <h2>Forgot Password</h2>
       <TextField
         required
         type='email'
@@ -41,30 +40,20 @@ function LoginPage({}: Props) {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <TextField
-        onChange={(e) => setPassword(e.target.value)}
-      value={password}
-        required
-        type='password'
-        id="outlined-basic"
-        label="Password"
-        variant="outlined"
-        sx={{ width: '100%' }}
-      />
-      <Link to="/forgot-password" style={{ alignSelf: 'flex-start', marginBottom: '10px', textDecoration: 'underline', color: 'black', fontSize: '0.75rem' }}>Forgot Password?</Link>
+      
       <button
         onClick={handleClick}
         type='submit'
         style={{ height: '56px', width: '100%', borderRadius: '8px',   }}
         className="pricing-card-button"
       >
-        Login
+        Forgot password
       </button>
       <Box sx={{fontSize: '0.75rem'}}>
-        Don't have an account? <Link to="/register" style={{ textDecoration: 'underline', color: 'black', }}>Register</Link>
+        Already have an account? <Link to="/login" style={{ textDecoration: 'underline', color: 'black', }}>Login</Link>
       </Box>
     </Box>
   )
 }
 
-export default LoginPage
+export default ForgotPasswordPage
