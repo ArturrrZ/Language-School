@@ -1,0 +1,19 @@
+.free-consultation-form{
+    background: var(--white);
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.14);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media  screen and (min-width: 768px) {
+    .free-consultation-form{
+    border-radius: 0px 0px 15px 0px;
+    margin-top: 0px;
+    /* box-shadow: none; */
+    }
+}

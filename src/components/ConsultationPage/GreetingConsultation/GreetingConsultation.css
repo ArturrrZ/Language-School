@@ -1,0 +1,18 @@
+.greeting-consultation{
+    background: linear-gradient(#aeaeae, #0062ff);
+    min-height: 500px;
+    margin-top: var(--nav-height);
+    border-radius: 15px;
+    margin-top: 0px;
+    color: white;
+    padding: 20px;
+}
+
+.greeting-consultation__content{
+    max-width: 500px;
+}
+@media  screen and (min-width: 768px) {
+    .greeting-consultation{
+    border-radius: 0px 0px 0px 15px;
+    }
+}

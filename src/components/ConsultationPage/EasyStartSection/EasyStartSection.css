@@ -1,0 +1,27 @@
+.easy-start-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 60px;
+}
+.easy-start-header{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.easy-start-card-number{
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+    width: 60px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.easy-start-card-description{
+    font-size: 0.8rem;
+}
+
+.easy-start-card-title{
+    font-weight: 500;
+}

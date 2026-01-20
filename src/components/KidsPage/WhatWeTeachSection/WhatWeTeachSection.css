@@ -18,6 +18,9 @@
     justify-content: center;
 }
 
+.card-description{
+    font-size: 0.8rem;
+}
 
 .card-title{
     font-weight: 500;
