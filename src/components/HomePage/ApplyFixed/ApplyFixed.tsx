@@ -1,7 +1,6 @@
 import React,{useEffect, useRef} from 'react'
 import type {ApplyType} from '../../../types'
 import './ApplyFixed.css'
-import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import { Button, Checkbox, FormControlLabel, TextField } from '@mui/material';

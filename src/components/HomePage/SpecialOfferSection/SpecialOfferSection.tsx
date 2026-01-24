@@ -1,8 +1,6 @@
-import React from 'react'
 import './SpecialOfferSection.css'
 import type { ApplyType } from '../../../types'
 import pointer from '../../../assets/pointer.avif'
-import TelegramIcon from '@mui/icons-material/Telegram'
 
 type Props = {
     setApply: (applyValue: ApplyType)=>void,

@@ -1,4 +1,3 @@
-import React from 'react'
 import './ChooseGoalSection.css'
 import cubeAndCursor from '../../../assets/cubeAndCursor.avif'
 import type {ApplyType} from '../../../types.ts'

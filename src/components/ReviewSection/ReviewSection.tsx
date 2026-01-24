@@ -1,4 +1,3 @@
-import React from 'react'
 import './ReviewSection.css'
 import Review from '../Review/Review';
 import type{ ReviewType } from '../../types.ts';

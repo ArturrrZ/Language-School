@@ -1,4 +1,3 @@
-import React from 'react'
 import './Review.css'
 import { Avatar } from '@mui/material';
 

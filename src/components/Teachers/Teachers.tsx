@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import './Teachers.css'
 import type { TeacherType } from '../../types'
 import { Avatar } from '@mui/material';

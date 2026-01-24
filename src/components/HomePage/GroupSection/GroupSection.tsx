@@ -1,4 +1,3 @@
-import React from 'react'
 import './GroupSection.css'
 import g1 from '../../../assets/g1.avif'
 import g2 from '../../../assets/g2.avif'

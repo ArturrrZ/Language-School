@@ -1,4 +1,3 @@
-import React from 'react'
 import './GreetingConsultation.css'
 import consultationImg from '../../../assets/799.jpg'
 import { Box } from '@mui/material'

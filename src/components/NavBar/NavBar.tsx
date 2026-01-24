@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './NavBar.css'
 import { Link, useLocation } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu';
@@ -6,9 +6,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 function NavBar() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
-  const closeMenu = (e) => {
+  const closeMenu = (e: React.MouseEvent) => {
     setOpen(false);
-    let closestLink = e.target.closest('a');
+    let closestLink = (e.target as HTMLElement).closest('a');
     if(closestLink){
       let href = closestLink.getAttribute('href');
       if (location.pathname === href ){window.scrollTo({ top: 0, behavior: 'smooth' })}

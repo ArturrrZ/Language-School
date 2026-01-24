@@ -1,4 +1,3 @@
-import React from 'react'
 import FormSection from '../components/ConsultationPage/Form/FormSection'
 import GreetingConsultation from '../components/ConsultationPage/GreetingConsultation/GreetingConsultation'
 import EasyStartSection from '../components/ConsultationPage/EasyStartSection/EasyStartSection'

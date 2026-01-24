@@ -1,6 +1,4 @@
-import React from 'react'
 import './LevelsSection.css'
-import { duration } from '@mui/material';
 import A1 from '../../../assets/levels/a1.jpg';
 import A2 from '../../../assets/levels/a2.jpg';
 import B1 from '../../../assets/levels/b1.jpg';

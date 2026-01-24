@@ -1,6 +1,6 @@
 import { IconButton } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import React, {useState} from 'react'
+import {useState} from 'react'
 import './FAQitem.css'
 
 type Props = {

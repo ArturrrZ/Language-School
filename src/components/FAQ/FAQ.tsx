@@ -1,7 +1,4 @@
-import React, {useState} from 'react'
 import './FAQ.css'
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { IconButton } from '@mui/material';
 import FAQitem from './FAQitem';
 import type { FAQType } from '../../types';
 // import { FAQType } from '../../types.ts' or define it here

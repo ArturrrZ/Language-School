@@ -1,4 +1,3 @@
-import React from 'react'
 import './GreetingKids.css'
 import KidLaptop from '../../../assets/kidLaptop.jpg'
 
