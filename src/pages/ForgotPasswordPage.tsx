@@ -33,8 +33,10 @@ function ForgotPasswordPage({}: Props) {
       <TextField
         required
         type='email'
-        id="outlined-basic"
+        id="forgot-password-email"
+        name="email"
         label="Email"
+        autoComplete="email"
         variant="outlined"
         sx={{ width: '100%' }}
         value={email}

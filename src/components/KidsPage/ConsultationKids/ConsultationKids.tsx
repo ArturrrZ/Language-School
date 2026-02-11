@@ -35,16 +35,20 @@ function ConsultationKids({}: Props) {
             <h2 className="consultation-kids-header">Request a Consultation</h2>
             <TextField
                   required
-                  id="outlined-basic"
+                  id="consultation-kids-name"
+                  name="parentName"
                   label="Parent's name"
+                  autoComplete="name"
                   variant="outlined"
                 />
 
                 <TextField
                   required
                   type='email'
-                  id="outlined-basic"
+                  id="consultation-kids-email"
+                  name="email"
                   label="Email"
+                  autoComplete="email"
                   variant="outlined"
                 />
 

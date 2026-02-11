@@ -34,8 +34,10 @@ function LoginPage({}: Props) {
       <TextField
         required
         type='email'
-        id="outlined-basic"
+        id="login-email"
+        name="email"
         label="Email"
+        autoComplete="email"
         variant="outlined"
         sx={{ width: '100%' }}
         value={email}
@@ -46,8 +48,10 @@ function LoginPage({}: Props) {
       value={password}
         required
         type='password'
-        id="outlined-basic"
+        id="login-password"
+        name="password"
         label="Password"
+        autoComplete="current-password"
         variant="outlined"
         sx={{ width: '100%' }}
       />

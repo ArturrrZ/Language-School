@@ -61,21 +61,27 @@ function ApplyFixed({apply,setApply}: Props) {
         <p>{apply.text}</p>
         <TextField
           required
-          id="outlined-basic"
+          id="apply-fixed-name"
+          name="name"
           label="Your name"
+          autoComplete="name"
           variant="outlined"
         />
         <TextField
           required
-          id="outlined-basic"
+          id="apply-fixed-phone"
+          name="phone"
           label="Your phone number"
+          autoComplete="tel"
           variant="outlined"
         />
         <TextField
           required
           type='email'
-          id="outlined-basic"
+          id="apply-fixed-email"
+          name="email"
           label="Your email"
+          autoComplete="email"
           variant="outlined"
         />
         <FormControlLabel

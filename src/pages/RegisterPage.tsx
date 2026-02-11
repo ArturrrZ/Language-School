@@ -35,8 +35,10 @@ function RegisterPage({}: Props) {
       <TextField
         required
         type='email'
-        id="outlined-basic"
+        id="register-email"
+        name="email"
         label="Email"
+        autoComplete="email"
         variant="outlined"
         sx={{ width: '100%' }}
         value={email}
@@ -47,8 +49,10 @@ function RegisterPage({}: Props) {
       value={password}
         required
         type='password'
-        id="outlined-basic"
+        id="register-password"
+        name="password"
         label="Password"
+        autoComplete="new-password"
         variant="outlined"
         sx={{ width: '100%' }}
       />
@@ -57,8 +61,10 @@ function RegisterPage({}: Props) {
       value={confirmPassword}
         required
         type='password'
-        id="outlined-basic"
+        id="register-confirm-password"
+        name="confirmPassword"
         label="Confirm Password"
+        autoComplete="new-password"
         variant="outlined"
         sx={{ width: '100%' }}
       />

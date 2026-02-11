@@ -60,16 +60,21 @@ function Greeting({}: Props) {
 
                 <TextField
                   required
-                  id="outlined-basic"
+                  id="home-name"
+                  name="name"
+                  type='text'
                   label="Your name"
+                  autoComplete="name"
                   variant="outlined"
                 />
 
                 <TextField
                   required
                   type='email'
-                  id="outlined-basic"
+                  id="home-email"
+                  name="email"
                   label="Email"
+                  autoComplete="email"
                   variant="outlined"
                 />
 

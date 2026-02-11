@@ -26,24 +26,30 @@ function FormSection({}: Props) {
         <h2>Request a Consultation</h2>
             <TextField
                   required
-                  id="outlined-basic"
+                  id="consultation-name"
+                  name="name"
                   label="Your name"
+                  autoComplete="name"
                   variant="outlined"
                 />
 
                 <TextField
                   required
                   type='email'
-                  id="outlined-basic"
+                  id="consultation-email"
+                  name="email"
                   label="Email"
+                  autoComplete="email"
                   variant="outlined"
                 />
                 <TextField
                   multiline
                   minRows={3}
                   type='text'
-                  id="outlined-basic"
+                  id="consultation-message"
+                  name="message"
                   label="Optional message"
+                  autoComplete="off"
                   variant="outlined"
                 />
                 <FormControlLabel
