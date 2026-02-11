@@ -19,9 +19,6 @@ function LoginPage({}: Props) {
       // setTerms(false)
       // setAds(false)
     }
-  function handleClick() {
-    // Perform login logic here (e.g., API call)
-    alert(`Perform login logic here`);}
   return (
     <form onSubmit={handleSubmit}>
 

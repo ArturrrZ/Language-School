@@ -8,9 +8,6 @@ function RegisterPage({}: Props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  function handleClick() {
-    // Perform register logic here (e.g., API call)
-    alert(`Perform register logic here`);}
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
       e.preventDefault()
       if (password !== confirmPassword) {

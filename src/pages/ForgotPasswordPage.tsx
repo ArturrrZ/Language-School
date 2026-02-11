@@ -6,9 +6,6 @@ type Props = {}
 
 function ForgotPasswordPage({}: Props) {
   const [email, setEmail] = useState('');
-  function handleClick() {
-    // Perform forgot password logic here (e.g., API call)
-    alert(`Perform forgot password logic here`);}
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
       e.preventDefault()
       alert(`Perform forgot password logic here`)
