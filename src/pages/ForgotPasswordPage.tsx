@@ -9,7 +9,16 @@ function ForgotPasswordPage({}: Props) {
   function handleClick() {
     // Perform forgot password logic here (e.g., API call)
     alert(`Perform forgot password logic here`);}
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+      e.preventDefault()
+      alert(`Perform forgot password logic here`)
+  
+      // reset native inputs
+      e.currentTarget.reset()
+      setEmail('')
+    }
   return (
+    <form onSubmit={handleSubmit}>
     <Box className='login-page' 
     sx={{ 
     width:{
@@ -44,7 +53,6 @@ function ForgotPasswordPage({}: Props) {
       />
       
       <button
-        onClick={handleClick}
         type='submit'
         style={{ height: '56px', width: '100%', borderRadius: '8px',   }}
         className="pricing-card-button"
@@ -55,6 +63,7 @@ function ForgotPasswordPage({}: Props) {
         Already have an account? <Link to="/login" style={{ textDecoration: 'underline', color: 'black', }}>Login</Link>
       </Box>
     </Box>
+    </form>
   )
 }
 

@@ -11,7 +11,22 @@ function RegisterPage({}: Props) {
   function handleClick() {
     // Perform register logic here (e.g., API call)
     alert(`Perform register logic here`);}
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+      e.preventDefault()
+      if (password !== confirmPassword) {
+        alert('Passwords do not match');
+        return;
+      }
+      alert(`Perform register logic here`)
+
+      // reset native inputs
+      e.currentTarget.reset()
+      setEmail('')
+      setPassword('')
+      setConfirmPassword('')
+    }
   return (
+    <form onSubmit={handleSubmit}>
     <Box className='register-page' 
     sx={{ 
     width:{
@@ -69,7 +84,6 @@ function RegisterPage({}: Props) {
         sx={{ width: '100%' }}
       />
       <button
-        onClick={handleClick}
         type='submit'
         style={{ height: '56px', width: '100%', borderRadius: '8px',   }}
         className="pricing-card-button"
@@ -80,6 +94,7 @@ function RegisterPage({}: Props) {
         Already have an account? <Link to="/login" style={{ textDecoration: 'underline', color: 'black', }}>Login</Link>
       </Box>
     </Box>
+    </form>
   )
 }
 

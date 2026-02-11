@@ -7,10 +7,25 @@ type Props = {}
 function LoginPage({}: Props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+      e.preventDefault()
+      alert(`Perform login logic here`)
+  
+      // reset native inputs
+      e.currentTarget.reset()
+      setEmail('')
+      setPassword('')
+      // reset controlled checkboxes
+      // setTerms(false)
+      // setAds(false)
+    }
   function handleClick() {
     // Perform login logic here (e.g., API call)
     alert(`Perform login logic here`);}
   return (
+    <form onSubmit={handleSubmit}>
+
+    
     <Box className='login-page' 
     sx={{ 
     width:{
@@ -57,7 +72,6 @@ function LoginPage({}: Props) {
       />
       <Link to="/forgot-password" style={{ alignSelf: 'flex-start', marginBottom: '10px', textDecoration: 'underline', color: 'black', fontSize: '0.75rem' }}>Forgot Password?</Link>
       <button
-        onClick={handleClick}
         type='submit'
         style={{ height: '56px', width: '100%', borderRadius: '8px',   }}
         className="pricing-card-button"
@@ -68,6 +82,7 @@ function LoginPage({}: Props) {
         Don't have an account? <Link to="/register" style={{ textDecoration: 'underline', color: 'black', }}>Register</Link>
       </Box>
     </Box>
+    </form>
   )
 }
 
