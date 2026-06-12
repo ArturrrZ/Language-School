@@ -1,27 +1,33 @@
 import { Box, TextField } from '@mui/material';
 import { useState } from 'react'
-import { Link,  } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 type Props = {}
 
 function RegisterPage({}: Props) {
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-      e.preventDefault()
-      if (password !== confirmPassword) {
-        alert('Passwords do not match');
-        return;
-      }
-      alert(`Perform register logic here`)
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+  const { register, isLoading } = useAuth();
 
-      // reset native inputs
-      e.currentTarget.reset()
-      setEmail('')
-      setPassword('')
-      setConfirmPassword('')
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setError('');
+    if (password !== confirmPassword) {
+      setError('Passwords do not match');
+      return;
     }
+    try {
+      await register({ username, email, password });
+      navigate('/');
+    } catch {
+      setError('Registration failed. Check username/email uniqueness.');
+    }
+  }
   return (
     <form onSubmit={handleSubmit}>
     <Box className='register-page' 
@@ -44,6 +50,17 @@ function RegisterPage({}: Props) {
     
     }}>
       <h2>Register</h2>
+      <TextField
+        required
+        id="register-username"
+        name="username"
+        label="Username"
+        autoComplete="username"
+        variant="outlined"
+        sx={{ width: '100%' }}
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
       <TextField
         required
         type='email'
@@ -80,12 +97,14 @@ function RegisterPage({}: Props) {
         variant="outlined"
         sx={{ width: '100%' }}
       />
+      {error ? <Box sx={{ color: 'error.main', width: '100%', fontSize: '0.875rem' }}>{error}</Box> : null}
       <button
         type='submit'
+        disabled={isLoading}
         style={{ height: '56px', width: '100%', borderRadius: '8px',   }}
         className="pricing-card-button"
       >
-        Register
+        {isLoading ? 'Loading...' : 'Register'}
       </button>
       <Box sx={{fontSize: '0.75rem'}}>
         Already have an account? <Link to="/login" style={{ textDecoration: 'underline', color: 'black', }}>Login</Link>
