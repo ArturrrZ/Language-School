@@ -59,7 +59,7 @@ color: var(--purp);
 
 .nav-links {
     position: fixed;
-    top: 50px;
+    top: var(--nav-height);
     right:0px;
     width: 100%;
     margin: 0 auto;
@@ -126,7 +126,7 @@ color: var(--purp);
     #nav_primary:hover{
     /* background-color: var(--yell); */
     }
-    #nav_home{display:none;}
+    /* #nav_home{display:none;} */
     .nav-links{
         position: static;
         width: auto;
