@@ -39,6 +39,18 @@
   border: none;
 }
 
+.secondary-button{
+  border: 1px solid #dddd;
+  background-color: var(--whit);
+  color: var(--blac);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.secondary-button:hover{
+  background-color: var(--blac);
+  color: var(--whit);
+  border: none;
+}
 
 @media screen and (min-width: 768px){
   .main {

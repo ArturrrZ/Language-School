@@ -4,12 +4,13 @@ import { Link, useLocation } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { Box } from '@mui/material';
 
 function NavBar() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const location = useLocation();
-  const { isAuthenticated, user, logout } = useAuth();
+  const { isAuthenticated, user} = useAuth();
   const closeMenu = (e: React.MouseEvent) => {
     setOpen(false);
     let closestLink = (e.target as HTMLElement).closest('a');
@@ -37,15 +38,7 @@ function NavBar() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location.pathname]);
 
-  const handleLogout = async () => {
-    if (window.confirm('Are you sure you want to logout?')) {
-
-    await logout();
-    setOpen(false);
-    navigate('/login');
-    }
-  };
-
+  
   return (
     <nav>
       <div className="nav-inner">
@@ -63,12 +56,11 @@ function NavBar() {
             </>
           ) : (
             <>
-              <span className='lTd' style={{ cursor: 'default' }}>
+              <Box className='lTd' sx={{ cursor: 'default', '&:hover': {backgroundColor: 'white'} }}>
                 {user?.username}{user?.is_teacher ? ' (Teacher)' : ''}
-              </span>
-              <a type='button' className='lTd' onClick={handleLogout} style={{ background: 'none', border: 'none' }}>
-                Logout
-              </a>
+              </Box>
+              <Link to='/logout' className='lTd' onClick={closeMenu}>Logout</Link>
+              
             </>
           )}
         </div>

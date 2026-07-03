@@ -8,6 +8,7 @@ import NavBar from './components/NavBar/NavBar';
 import { Box } from '@mui/material';
 import RegisterPage from './pages/RegisterPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
+import Logout from './pages/Logout';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route  path='/login' element={<LoginPage />}/>
         <Route  path='/register' element={<RegisterPage />}/>
         <Route  path='/forgot-password' element={<ForgotPasswordPage />}/>
+        <Route  path='/logout' element={<Logout />}/>
       </Routes>
       </Box>
     </BrowserRouter>

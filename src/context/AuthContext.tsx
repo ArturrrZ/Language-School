@@ -34,6 +34,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const bootstrap = async () => {
       await refreshMe();
       setIsBootstrapped(true);
+      console.log(user);
     };
     void bootstrap();
   }, [refreshMe]);

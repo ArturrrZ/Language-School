@@ -58,3 +58,4 @@ todo.txt
 src/context/auth-context.ts
 src/context/AuthProvider.tsx
 src/context/AuthContextEasy.tsx
+test.html
