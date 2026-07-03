@@ -15,6 +15,7 @@
   --blac: rgb(0, 0, 0);
   --whit: rgb(255,255,255);
   --star: rgb(240, 176, 0);
+  --gr: rgb(128, 128, 128);
   font-family: "Google Sans Flex", system-ui, sans-serif;
   color: var(--pr-color);
 }

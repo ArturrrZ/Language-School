@@ -7,18 +7,29 @@ const Logout = () => {
     const navigate = useNavigate();
     const { logout, isLoading } = useAuth();
     const [error, setError] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
+
+        if (isSubmitting) {
+            return;
+        }
+
+        setIsSubmitting(true);
         setError('');
 
         try {
+                        await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate a delay for logout
+
             await logout();
             localStorage.removeItem('token');
-            sessionStorage.clear();
+            // sessionStorage.clear();
             navigate('/login', { replace: true });
         } catch {
             setError('Failed to logout. Please try again.');
+        } finally {
+            setIsSubmitting(false);
         }
     }
 
@@ -57,17 +68,17 @@ const Logout = () => {
 
                 <button
                     type='submit'
-                    disabled={isLoading}
+                    disabled={isLoading || isSubmitting}
                     style={{ height: '56px', width: '100%', borderRadius: '8px' }}
                     className='myButton'
                 >
-                    {isLoading ? 'Logging out...' : 'Yes, log me out'}
+                    {isLoading || isSubmitting ? 'Logging out...' : 'Yes, log me out'}
                 </button>
 
                 <button
                     type='button'
                     onClick={handleCancel}
-                    disabled={isLoading}
+                    disabled={isLoading || isSubmitting}
                     className='secondary-button'
                     style={{
                         height: '56px',

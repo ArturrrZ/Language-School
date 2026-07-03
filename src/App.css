@@ -24,6 +24,10 @@
     cursor:pointer;
     background-color: var(--blac);
 }
+.myButton:disabled{
+    cursor: not-allowed;
+    background-color: var(--gr);
+}
 
 .text-center {
     text-align: center;
