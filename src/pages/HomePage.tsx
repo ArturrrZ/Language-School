@@ -25,11 +25,13 @@ function HomePage({}: Props) {
     display: boolean;
     whatCanYouDo: string[];
     duration: string;
+    level: string;
   }>
   ({
     display:false,
     whatCanYouDo: [],
     duration:'',
+    level: ''
   });
   return (
     <>
