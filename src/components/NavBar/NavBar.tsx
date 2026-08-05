@@ -3,11 +3,10 @@ import './NavBar.css'
 import { Link, useLocation } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu';
 import { useAuth } from '../../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
-import { Box } from '@mui/material';
+// useNavigate imported previously but not used in this component
 
 function NavBar() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate(); (unused currently)
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const { isAuthenticated, user} = useAuth();
@@ -56,9 +55,9 @@ function NavBar() {
             </>
           ) : (
             <>
-              <Box className='lTd' sx={{ cursor: 'default', '&:hover': {backgroundColor: 'white'} }}>
+              <Link to='/profile' className='lTd' onClick={closeMenu}>
                 {user?.username}{user?.is_teacher ? ' (Teacher)' : ''}
-              </Box>
+              </Link>
               <Link to='/logout' className='lTd' onClick={closeMenu}>Logout</Link>
               
             </>

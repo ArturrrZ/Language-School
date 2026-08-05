@@ -33,7 +33,7 @@
     text-align: center;
 }
 
-.main{margin-top:50px;}
+.main{margin-top:calc(var(--nav-height) + 10px);}
 .custom-button{
   border: 1px solid black;
 }
@@ -58,7 +58,8 @@
 
 @media screen and (min-width: 768px){
   .main {
-  max-width: 1150px;
-  margin: 0 auto;
-}
+    max-width: 1150px;
+    margin: 0 auto;
+    margin-top: var(--nav-height);
+  }
 }

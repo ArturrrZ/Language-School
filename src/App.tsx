@@ -9,6 +9,7 @@ import { Box } from '@mui/material';
 import RegisterPage from './pages/RegisterPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import Logout from './pages/Logout';
+import ProfilePage from './pages/ProfilePage';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route  path='/register' element={<RegisterPage />}/>
         <Route  path='/forgot-password' element={<ForgotPasswordPage />}/>
         <Route  path='/logout' element={<Logout />}/>
+        <Route  path='/profile' element={<ProfilePage />}/>
       </Routes>
       </Box>
     </BrowserRouter>

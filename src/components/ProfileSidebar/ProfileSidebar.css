@@ -1,0 +1,11 @@
+.profile-sidebar{
+  width: 220px;
+  background: var(--s-bg);
+  border-radius: 8px;
+  padding: 8px;
+  margin-right: 20px;
+}
+
+@media (max-width: 767px){
+  .profile-sidebar{ display:block; width: 100%; }
+}
