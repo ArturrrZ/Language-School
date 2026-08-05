@@ -16,18 +16,16 @@ function formatTeachingExperience(years: number) {
   return `${years} year${years === 1 ? '' : 's'} of teaching experience`
 }
 
-function normalizeTeacher(teacher: BackendTeacher): TeacherType {
-  return {
-    id: teacher.id,
-    name: teacher.name,
-    experience: formatTeachingExperience(teacher.teaching_experience),
-    photo: teacher.profile_picture ?? undefined,
-    message: teacher.description,
-  }
-}
+// keep helper for potential reuse; currently mapping is done inline in `getTeachers`
 
-export async function getTeachers() {
+export async function getTeachers(opts?: { preferKidsDescription?: boolean }): Promise<TeacherType[]> {
   const { data } = await http.get<TeachersApiResponse>('/teachers/')
   const teachers = Array.isArray(data) ? data : data.results ?? []
-  return teachers.map(normalizeTeacher)
+  return teachers.map((t) => ({
+    id: t.id,
+    name: t.name,
+    experience: formatTeachingExperience(t.teaching_experience),
+    photo: t.profile_picture ?? undefined,
+    message: opts?.preferKidsDescription && t.kids_description ? t.kids_description : t.description,
+  }))
 }
