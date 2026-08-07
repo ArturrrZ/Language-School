@@ -2,15 +2,11 @@ import { useState } from 'react'
 import ProfileSidebar from '../components/ProfileSidebar/ProfileSidebar'
 import { Box, Typography } from '@mui/material'
 import './ProfilePage.css'
+import BookTrial from '../components/Profile/BookTrial/BookTrial'
 
 type Section = 'book' | 'upcoming' | 'past' | 'account'
 
-function BookTrialPlaceholder(){
-  return <div className='profile-section'>
-    <Typography variant='h5'>Book Free Trial</Typography>
-    <p>Teacher selector, date picker and availability will go here.</p>
-  </div>
-}
+// BookTrial UI implemented in components/Profile/BookTrial
 
 function UpcomingPlaceholder(){
   return <div className='profile-section'>
@@ -40,7 +36,7 @@ function ProfilePage(){
     <div className='profile-page main'>
       <ProfileSidebar section={section} setSection={setSection} />
       <Box className='profile-content'>
-        {section === 'book' && <BookTrialPlaceholder />}
+        {section === 'book' && <BookTrial />}
         {section === 'upcoming' && <UpcomingPlaceholder />}
         {section === 'past' && <PastPlaceholder />}
         {section === 'account' && <AccountPlaceholder />}
