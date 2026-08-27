@@ -12,6 +12,6 @@ export async function getMyTrialRequests() {
 
 export async function cancelTrialRequest(id: number) {
   // Backend cancel endpoint not implemented yet; try PATCH to update status
-  const { data } = await http.patch(`/trial-lessons/${id}/`, { status: 'cancelled' })
+  const { data } = await http.post(`/trial-lessons/${id}/cancel/`, { status: 'cancelled' })
   return data
 }

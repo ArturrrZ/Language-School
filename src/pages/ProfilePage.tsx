@@ -3,23 +3,18 @@ import ProfileSidebar from '../components/ProfileSidebar/ProfileSidebar'
 import { Box, Typography } from '@mui/material'
 import './ProfilePage.css'
 import BookTrial from '../components/Profile/BookTrial/BookTrial'
+import MyLessons from '../components/Profile/MyLessons/MyLessons'
 
 type Section = 'book' | 'upcoming' | 'past' | 'account'
 
 // BookTrial UI implemented in components/Profile/BookTrial
 
 function UpcomingPlaceholder(){
-  return <div className='profile-section'>
-    <Typography variant='h5'>Upcoming Lessons</Typography>
-    <p>List of upcoming trial lessons will appear here.</p>
-  </div>
+  return <MyLessons mode='upcoming' />
 }
 
 function PastPlaceholder(){
-  return <div className='profile-section'>
-    <Typography variant='h5'>Past Lessons</Typography>
-    <p>Completed lessons and history.</p>
-  </div>
+  return <MyLessons mode='past' />
 }
 
 function AccountPlaceholder(){

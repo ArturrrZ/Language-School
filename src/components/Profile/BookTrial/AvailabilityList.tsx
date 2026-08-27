@@ -41,7 +41,7 @@ export default function AvailabilityList({ teacherId, date, onSelectSlot }: Prop
               const end = new Date(slot.end_at)
               const label = `${start.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} - ${end.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`
               return (
-                <ListItemButton key={i} onClick={() => onSelectSlot(slot.start_at, slot.end_at)}>
+                <ListItemButton  key={i} onClick={() => onSelectSlot(slot.start_at, slot.end_at)}>
                   <ListItemText primary={label} secondary={new Date(slot.start_at).toLocaleString()} />
                 </ListItemButton>
               )
