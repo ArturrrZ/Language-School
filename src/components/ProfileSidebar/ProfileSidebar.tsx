@@ -1,4 +1,3 @@
-import React from 'react'
 import { List, ListItemButton, ListItemText, Box, Typography } from '@mui/material'
 import './ProfileSidebar.css'
 

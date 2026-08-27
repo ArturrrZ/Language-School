@@ -77,7 +77,6 @@ export default function MyLessons({ mode }: Props){
         {items.map(item => {
           const start = item.start_at ? new Date(item.start_at) : null
           const label = start ? start.toISOString() : 'Time TBD'
-          const teacher = item.teacher?.user?.username ?? item.teacher?.name ?? item.teacher ?? 'Teacher'
           const notes: Array<{ label: string; text: string | null }> = []
           const studentNote = item.student_note ?? item.studentNote ?? item.note ?? null
           if (studentNote) notes.push({ label: 'Student note', text: String(studentNote) })

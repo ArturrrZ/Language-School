@@ -1,6 +1,6 @@
 import { Box, TextField } from '@mui/material'
 import {useState} from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
 type Props = {}
@@ -10,14 +10,16 @@ function LoginPage({}: Props) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
   const { login, isLoading } = useAuth();
+  const from = (location.state as { from?: { pathname?: string } } | null)?.from?.pathname || '/profile';
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setError('');
     try {
       await login({ username, password });
-      navigate('/');
+      navigate(from, { replace: true });
     } catch {
       setError('Invalid credentials.');
     }

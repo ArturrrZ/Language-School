@@ -1,6 +1,6 @@
 import { Box, TextField } from '@mui/material';
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 type Props = {}
@@ -12,7 +12,9 @@ function RegisterPage({}: Props) {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
   const { register, isLoading } = useAuth();
+  const from = (location.state as { from?: { pathname?: string } } | null)?.from?.pathname || '/profile';
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -23,7 +25,7 @@ function RegisterPage({}: Props) {
     }
     try {
       await register({ username, email, password });
-      navigate('/');
+      navigate(from, { replace: true });
     } catch {
       setError('Registration failed. Check username/email uniqueness.');
     }
