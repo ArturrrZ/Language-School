@@ -1,5 +1,11 @@
 import { http } from './http';
-import type { AuthMeResponse, AuthUser, LoginPayload, RegisterPayload } from '../types/auth';
+import type {
+  AuthMeResponse,
+  AuthUser,
+  ForgotPasswordConfirmPayload,
+  LoginPayload,
+  RegisterPayload,
+} from '../types/auth';
 
 const AUTH_BASE = '/auth';
 
@@ -30,4 +36,14 @@ export async function register(payload: RegisterPayload): Promise<AuthUser> {
 
 export async function logout(): Promise<void> {
   await http.post(`${AUTH_BASE}/logout/`, {});
+}
+
+export async function requestPasswordReset(email: string): Promise<{ detail: string }> {
+  const { data } = await http.post<{ detail: string }>(`${AUTH_BASE}/forgot-password/`, { email });
+  return data;
+}
+
+export async function confirmPasswordReset(payload: ForgotPasswordConfirmPayload): Promise<{ detail: string }> {
+  const { data } = await http.post<{ detail: string }>(`${AUTH_BASE}/reset-password/`, payload);
+  return data;
 }

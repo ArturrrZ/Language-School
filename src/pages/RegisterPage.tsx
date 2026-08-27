@@ -100,6 +100,7 @@ function RegisterPage({}: Props) {
         sx={{ width: '100%' }}
       />
       {error ? <Box sx={{ color: 'error.main', width: '100%', fontSize: '0.875rem' }}>{error}</Box> : null}
+      <Link to="/forgot-password" style={{ alignSelf: 'flex-start', marginBottom: '10px', textDecoration: 'underline', color: 'black', fontSize: '0.75rem' }}>Forgot Password?</Link>
       <button
         type='submit'
         disabled={isLoading}

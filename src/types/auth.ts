@@ -30,3 +30,9 @@ export type RegisterPayload = {
   email: string;
   password: string;
 };
+
+export type ForgotPasswordConfirmPayload = {
+  uid: string;
+  token: string;
+  new_password: string;
+};
