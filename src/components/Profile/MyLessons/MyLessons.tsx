@@ -3,6 +3,7 @@ import { List, ListItem, ListItemText, ListItemSecondaryAction, Typography, Box,
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { getMyTrialRequests, cancelTrialRequest } from '../../../api/trialLessons'
+import { getErrorMessage } from '../../../utils/errorMessage'
 
 dayjs.extend(relativeTime)
 
@@ -17,23 +18,26 @@ export default function MyLessons({ mode }: Props){
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
   const [cancellingId, setCancellingId] = useState<number | null>(null)
 
-  useEffect(() => {
-    let mounted = true
+  async function loadLessons(){
     setLoading(true)
     setErrorMessage(null)
     setSuccessMessage(null)
-    getMyTrialRequests().then((data: any[]) => {
-      if (!mounted) return
+    try {
+      const data = await getMyTrialRequests()
       const now = new Date()
-      const upcoming = data.filter(d => new Date(d.start_at) >= now)
-      const past = data.filter(d => new Date(d.start_at) < now)
+      const upcoming = data.filter((d: any) => new Date(d.start_at) >= now)
+      const past = data.filter((d: any) => new Date(d.start_at) < now)
       setItems(mode === 'upcoming' ? upcoming : past)
-    }).catch(() => {
-      if (!mounted) return
+    } catch (error) {
       setItems([])
-      setErrorMessage('Failed to load your lessons. Please try again.')
-    }).finally(() => mounted && setLoading(false))
-    return () => { mounted = false }
+      setErrorMessage(getErrorMessage(error, 'Failed to load your lessons. Please try again.'))
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    void loadLessons()
   }, [mode])
 
   const [confirmOpen, setConfirmOpen] = useState(false)
@@ -55,8 +59,8 @@ export default function MyLessons({ mode }: Props){
       setItems(prev => prev.filter(i => i.id !== confirmId))
       setSuccessMessage('Trial request cancelled')
       setConfirmId(null)
-    }catch(e){
-      setErrorMessage('Failed to cancel request. Please try again.')
+    }catch(error){
+      setErrorMessage(getErrorMessage(error, 'Failed to cancel request. Please try again.'))
       // keep confirmId so user can retry if needed
     }finally{
       setCancellingId(null)
@@ -66,15 +70,22 @@ export default function MyLessons({ mode }: Props){
 
   if (loading) return <Box sx={{p:2, textAlign:'center'}}><CircularProgress /></Box>
 
-  if (!items.length) return <Typography>No {mode} lessons.</Typography>
-
   return (
     <Box className='profile-section'>
       <Typography variant='h5' gutterBottom>{mode === 'upcoming' ? 'Upcoming Lessons' : 'Past Lessons'}</Typography>
-      {errorMessage && <Alert severity='error' sx={{mb:2}}>{errorMessage}</Alert>}
+      {errorMessage && (
+        <Alert
+          severity='error'
+          sx={{mb:2}}
+          action={<Button color='inherit' size='small' onClick={() => void loadLessons()}>Retry</Button>}
+        >
+          {errorMessage}
+        </Alert>
+      )}
       {successMessage && <Alert severity='success' sx={{mb:2}}>{successMessage}</Alert>}
+      {!items.length ? <Typography>No {mode} lessons.</Typography> : (
       <List>
-        {items.map(item => {
+        {items.map((item) => {
           const start = item.start_at ? new Date(item.start_at) : null
           const label = start ? start.toISOString() : 'Time TBD'
           const notes: Array<{ label: string; text: string | null }> = []
@@ -122,6 +133,7 @@ export default function MyLessons({ mode }: Props){
           )
         })}
       </List>
+      )}
         <Dialog open={confirmOpen} onClose={() => setConfirmOpen(false)}>
           <DialogTitle>Cancel trial request?</DialogTitle>
           <DialogContent>
