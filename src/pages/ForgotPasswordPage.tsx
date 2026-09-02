@@ -16,7 +16,7 @@ function ForgotPasswordPage({}: Props) {
   const token = params.get('token') ?? '';
   const isResetMode = Boolean(uid && token);
 
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState(user?.email || '');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
