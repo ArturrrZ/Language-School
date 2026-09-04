@@ -1,24 +1,29 @@
 import { Box, TextField } from '@mui/material'
 import {useState} from 'react'
-import { Link,  } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 
 type Props = {}
 
 function LoginPage({}: Props) {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-      e.preventDefault()
-      alert(`Perform login logic here`)
-  
-      // reset native inputs
-      e.currentTarget.reset()
-      setEmail('')
-      setPassword('')
-      // reset controlled checkboxes
-      // setTerms(false)
-      // setAds(false)
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { login, isLoading } = useAuth();
+  const from = (location.state as { from?: { pathname?: string } } | null)?.from?.pathname || '/profile';
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setError('');
+    try {
+      await login({ username, password });
+      navigate(from, { replace: true });
+    } catch {
+      setError('Invalid credentials.');
     }
+  }
   return (
     <form onSubmit={handleSubmit}>
 
@@ -45,15 +50,14 @@ function LoginPage({}: Props) {
       <h2>Login</h2>
       <TextField
         required
-        type='email'
-        id="login-email"
-        name="email"
-        label="Email"
-        autoComplete="email"
+        id="login-username"
+        name="username"
+        label="Username"
+        autoComplete="username"
         variant="outlined"
         sx={{ width: '100%' }}
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
       />
       <TextField
         onChange={(e) => setPassword(e.target.value)}
@@ -67,13 +71,15 @@ function LoginPage({}: Props) {
         variant="outlined"
         sx={{ width: '100%' }}
       />
+      {error ? <Box sx={{ color: 'error.main', width: '100%', fontSize: '0.875rem' }}>{error}</Box> : null}
       <Link to="/forgot-password" style={{ alignSelf: 'flex-start', marginBottom: '10px', textDecoration: 'underline', color: 'black', fontSize: '0.75rem' }}>Forgot Password?</Link>
       <button
         type='submit'
+        disabled={isLoading}
         style={{ height: '56px', width: '100%', borderRadius: '8px',   }}
         className="pricing-card-button"
       >
-        Login
+        {isLoading ? 'Loading...' : 'Login'}
       </button>
       <Box sx={{fontSize: '0.75rem'}}>
         Don't have an account? <Link to="/register" style={{ textDecoration: 'underline', color: 'black', }}>Register</Link>

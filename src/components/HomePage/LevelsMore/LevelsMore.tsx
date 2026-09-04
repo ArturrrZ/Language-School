@@ -6,8 +6,8 @@ import type { ApplyType } from '../../../types'
 
 
 type Props = {
-    levelsMore:  {display: boolean, whatCanYouDo: string[], duration: string},
-    setLevelsMore: (value: {display: boolean, whatCanYouDo: string[], duration: string}) => void,
+    levelsMore:  {display: boolean, whatCanYouDo: string[], duration: string, level: string},
+    setLevelsMore: (value: {display: boolean, whatCanYouDo: string[], duration: string, level: string}) => void,
     setApply: (applyValue: ApplyType)=>void,
 }
 
@@ -17,7 +17,7 @@ function LevelsMore({levelsMore, setLevelsMore, setApply}: Props) {
     function handleOutsideClick(e: MouseEvent) {
       // add logic to close LevelsMore when clicking outside
       if (mainRef.current && !mainRef.current.contains(e.target as Node)) {
-        setLevelsMore({display:false, whatCanYouDo: [], duration: ''});
+        setLevelsMore({display:false, whatCanYouDo: [], duration: '', level: ''});
       }
     }
     
@@ -33,16 +33,16 @@ function LevelsMore({levelsMore, setLevelsMore, setApply}: Props) {
       };
     },[levelsMore]);
     function handleApply(){
-      setLevelsMore({display:false, whatCanYouDo: [], duration: ''});
-      setTimeout(()=>{setApply({display:true, title:'Apply for this level', text: 'Please fill out the form to apply for this level.'});}, 400);
+      setLevelsMore({display:false, whatCanYouDo: [], duration: '', level: ''});
+      setTimeout(()=>{setApply({display:true, title:`Apply for level ${levelsMore.level}`, text: 'Please fill out the form to apply for this level.'});}, 400);
       
     }
   return (
     <div className={`levels-more-section ${levelsMore.display ? 'open' : ''}`} >
         <div className="levels-main" ref={mainRef}>
           <div className="levels-top">
-            <h2>What You Can Do at This Level:</h2>
-            <IconButton aria-label="close" onClick={() => { setLevelsMore({display:false, whatCanYouDo: [], duration: ''}) }}>
+            <h2>What You Can Do at This Level {levelsMore.level} :</h2>
+            <IconButton aria-label="close" onClick={() => { setLevelsMore({display:false, whatCanYouDo: [], duration: '', level: ''}) }}>
               <CloseIcon />
             </IconButton>
             </div>

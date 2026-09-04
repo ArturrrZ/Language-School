@@ -1,0 +1,16 @@
+.profile-page{
+  display:flex;
+  gap:20px;
+}
+.profile-content{
+  flex:1;
+}
+.profile-section{
+  background: var(--s-bg);
+  padding:16px;
+  border-radius:8px;
+}
+
+@media (max-width: 767px){
+  .profile-page{ flex-direction: column; }
+}

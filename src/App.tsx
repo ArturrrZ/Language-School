@@ -8,6 +8,10 @@ import NavBar from './components/NavBar/NavBar';
 import { Box } from '@mui/material';
 import RegisterPage from './pages/RegisterPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
+import Logout from './pages/Logout';
+import ProfilePage from './pages/ProfilePage';
+import RequireAuth from './components/auth/RequireAuth';
+import PublicOnlyRoute from './components/auth/PublicOnlyRoute';
 
 
 function App() {
@@ -20,9 +24,15 @@ function App() {
         <Route  path='/' element={<HomePage />}/>
         <Route  path='/kids' element={<KidsPage />}/>
         <Route  path='/consultation' element={<ConsultationPage />}/>
-        <Route  path='/login' element={<LoginPage />}/>
-        <Route  path='/register' element={<RegisterPage />}/>
+        <Route element={<PublicOnlyRoute />}>
+          <Route  path='/login' element={<LoginPage />}/>
+          <Route  path='/register' element={<RegisterPage />}/>
+        </Route>
         <Route  path='/forgot-password' element={<ForgotPasswordPage />}/>
+        <Route  path='/logout' element={<Logout />}/>
+        <Route element={<RequireAuth />}>
+          <Route  path='/profile' element={<ProfilePage />}/>
+        </Route>
       </Routes>
       </Box>
     </BrowserRouter>

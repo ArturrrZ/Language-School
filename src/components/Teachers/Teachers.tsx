@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useEffect, useState } from 'react'
 import './Teachers.css'
 import type { TeacherType } from '../../types'
 import { Avatar } from '@mui/material';
@@ -7,10 +7,38 @@ import { Avatar } from '@mui/material';
 type Props = {
     teachers: TeacherType[]; 
     header?: string;
+  loading?: boolean;
 }
 
-function Teachers({teachers, header}: Props) {
+function Teachers({teachers, header, loading = false}: Props) {
     const [selectedTeacher, setSelectedTeacher] = useState<TeacherType | null>(teachers[0] || null);
+
+    useEffect(() => {
+      setSelectedTeacher((prev) => {
+        if (!teachers.length) return null
+        if (prev && teachers.some((teacher) => teacher.id === prev.id)) return prev
+        return teachers[0]
+      })
+    }, [teachers])
+
+    if (loading) {
+      return (
+        <section className="teachers-section main">
+          <h2 className="sH text-center teachers-header">{header || 'Meet Our Teachers'}</h2>
+          <p className='selected-teacher-message'>Loading teachers...</p>
+        </section>
+      )
+    }
+
+    if (!teachers.length) {
+      return (
+        <section className="teachers-section main">
+          <h2 className="sH text-center teachers-header">{header || 'Meet Our Teachers'}</h2>
+          <p className='selected-teacher-message'>No teachers available right now.</p>
+        </section>
+      )
+    }
+
   return (
     <section className="teachers-section main">
         <h2 className="sH text-center teachers-header">{header || "Meet Our Teachers"}</h2>
@@ -28,7 +56,13 @@ function Teachers({teachers, header}: Props) {
         </div>
 
     <div className="selected-teacher">
-        <img src={selectedTeacher?.photo} alt={selectedTeacher?.name} className="selected-teacher-photo" />
+        {selectedTeacher?.photo ? (
+          <img src={selectedTeacher.photo} alt={selectedTeacher.name} className="selected-teacher-photo" />
+        ) : (
+          <Avatar sx={{ width: 120, height: 120, borderRadius: '15px' }} alt={selectedTeacher?.name} src={selectedTeacher?.photo}>
+            {selectedTeacher?.name?.[0]}
+          </Avatar>
+        )}
         <p className='selected-teacher-message'>{selectedTeacher?.message}</p>
     </div>
 

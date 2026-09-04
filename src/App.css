@@ -24,12 +24,16 @@
     cursor:pointer;
     background-color: var(--blac);
 }
+.myButton:disabled{
+    cursor: not-allowed;
+    background-color: var(--gr);
+}
 
 .text-center {
     text-align: center;
 }
 
-.main{margin-top:50px;}
+.main{margin-top:calc(var(--nav-height) + 10px);}
 .custom-button{
   border: 1px solid black;
 }
@@ -39,10 +43,23 @@
   border: none;
 }
 
+.secondary-button{
+  border: 1px solid #dddd;
+  background-color: var(--whit);
+  color: var(--blac);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.secondary-button:hover{
+  background-color: var(--blac);
+  color: var(--whit);
+  border: none;
+}
 
 @media screen and (min-width: 768px){
   .main {
-  max-width: 1150px;
-  margin: 0 auto;
-}
+    max-width: 1150px;
+    margin: 0 auto;
+    margin-top: var(--nav-height);
+  }
 }

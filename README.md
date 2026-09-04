@@ -1,59 +1,79 @@
-# School
+# School Frontend
 
-A multi-page React + TypeScript website for a school/education project, built with Vite. Includes a homepage, kids-focused content, consultation flow, and simple auth pages.
+Frontend for the school platform, built with React + TypeScript + Vite.
 
-## Tech Stack
+## Stack
 - React 19
 - TypeScript
 - Vite
 - React Router
-- MUI (Material UI) + Emotion
+- MUI + Emotion
+- Axios
+- Day.js
+- Vitest + Testing Library
 
-## Pages & Routes
-- `/` — Home
-- `/kids` — Kids page
-- `/consultation` — Consultation page
-- `/login` — Login
-- `/register` — Register
-- `/forgot-password` — Forgot password
+## Main Features
+- Public pages: Home, Kids, Consultation
+- Auth pages: Login, Register
+- Forgot password flow (request + reset by link token)
+- Protected Profile page
+- Profile sections:
+  - Book Free Trial
+  - Upcoming Lessons
+  - Past Lessons
+  - Account (read-only)
 
-## Getting Started
+## Routes
+- `/`
+- `/kids`
+- `/consultation`
+- `/login`
+- `/register`
+- `/forgot-password`
+- `/profile` (protected)
 
-### Install
+## Requirements
+- Node.js 20+
+- npm 10+
+
+## Setup
 ```bash
 npm install
 ```
 
-### Run locally
+## Run in development
 ```bash
 npm run dev
 ```
-App runs at http://localhost:3000
+Default app URL: http://localhost:3000
 
-### Build
+## Scripts
 ```bash
+npm run dev
 npm run build
-```
-
-### Preview production build
-```bash
 npm run preview
-```
-
-### Lint
-```bash
 npm run lint
+npm run test
+npm run test:watch
 ```
 
-## Project Structure
-```
+## API configuration
+The app uses `VITE_API_BASE_URL` and defaults to `/api`.
+
+With default Vite proxy in [vite.config.ts](vite.config.ts), `/api` requests are proxied to `http://127.0.0.1:8000`.
+
+## Testing
+- Unit/integration-style component tests are in `src/**/*.test.tsx`
+- Uses `jsdom` environment and Testing Library utilities
+
+## Folder structure
+```text
 src/
+  api/
   components/
-  pages/
+  context/
   data/
-  assets/
+  pages/
+  types/
+  utils/
 ```
-
-## Notes
-- Routing is set up in App.tsx.
-- Styles live alongside components using CSS files.
