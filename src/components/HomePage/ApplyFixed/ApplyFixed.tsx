@@ -94,7 +94,7 @@ function ApplyFixed({apply,setApply}: Props) {
         }
       }
       function handleClickButton() {
-        alert('Redirect to Telegram')
+        window.open('https://t.me/z1nbv', '_blank', 'noopener,noreferrer')
     }
     useEffect(() => {
       function handleOutsideClick(e: MouseEvent) {

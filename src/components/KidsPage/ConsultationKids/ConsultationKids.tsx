@@ -30,7 +30,7 @@ function ConsultationKids({}: Props) {
     }, [success])
 
     function handleClickButton() {
-      alert('Redirect to Telegram')
+      window.open('https://t.me/z1nbv', '_blank', 'noopener,noreferrer')
     }
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
       e.preventDefault()

@@ -29,7 +29,7 @@ function FormSection({}: Props) {
   }, [success])
 
   const handleClickButton = () => {
-    // Add your telegram handler logic here
+    window.open('https://t.me/z1nbv', '_blank', 'noopener,noreferrer')
   }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {

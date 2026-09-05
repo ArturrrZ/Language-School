@@ -84,7 +84,7 @@ function Greeting({}: Props) {
   }
 
   function handleClickButton() {
-    alert('Redirect to Telegram')
+    window.open('https://t.me/z1nbv', '_blank', 'noopener,noreferrer')
   }
 
   return (
