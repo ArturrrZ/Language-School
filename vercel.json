@@ -2,8 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
-      "source": "/api/:match*",
-      "destination": "https://language-school-backend-production.up.railway.app/api/:match*"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
